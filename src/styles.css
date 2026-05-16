@@ -1252,6 +1252,275 @@ body {
   padding: 8px 9px;
 }
 
+.zodo-crm-preview {
+  overflow: hidden;
+  border: 1px solid rgba(38, 51, 61, 0.12);
+  border-radius: 5px;
+  background: #ffffff;
+  box-shadow: 0 22px 56px rgba(38, 51, 61, 0.1);
+  color: #26333d;
+  transform: translateZ(0);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+}
+
+.zodo-crm-preview-compact {
+  box-shadow: none;
+}
+
+.zodo-crm-topbar {
+  display: grid;
+  grid-template-columns: minmax(150px, 0.8fr) minmax(180px, 1fr) auto;
+  align-items: center;
+  gap: 14px;
+  border-bottom: 1px solid rgba(38, 51, 61, 0.1);
+  background: #ffffff;
+  padding: 14px;
+}
+
+.zodo-crm-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.zodo-crm-brand > span {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border-radius: 5px;
+  background: #49d879;
+  color: #26333d;
+  font-weight: 900;
+}
+
+.zodo-crm-brand strong,
+.zodo-crm-brand small {
+  display: block;
+}
+
+.zodo-crm-brand strong {
+  font-size: 15px;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.zodo-crm-brand small {
+  margin-top: 3px;
+  color: #65717a;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.zodo-crm-search {
+  display: flex;
+  min-height: 38px;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(38, 51, 61, 0.1);
+  border-radius: 5px;
+  background: #f7f8f6;
+  padding: 0 12px;
+  color: #65717a;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.zodo-crm-topbar button {
+  min-height: 38px;
+  border: 0;
+  border-radius: 5px;
+  background: #49d879;
+  color: #26333d;
+  cursor: default;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 900;
+  padding: 0 14px;
+}
+
+.zodo-crm-layout {
+  display: grid;
+  grid-template-columns: 132px minmax(0, 1fr);
+  min-height: 408px;
+}
+
+.zodo-crm-sidebar {
+  display: grid;
+  align-content: start;
+  gap: 7px;
+  border-right: 1px solid rgba(38, 51, 61, 0.1);
+  background: #fbfcfa;
+  padding: 14px;
+}
+
+.zodo-crm-sidebar span {
+  display: flex;
+  min-height: 34px;
+  align-items: center;
+  gap: 8px;
+  border-radius: 5px;
+  color: #65717a;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 0 9px;
+}
+
+.zodo-crm-sidebar span span {
+  min-height: 0;
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  padding: 0;
+}
+
+.zodo-crm-sidebar .is-active {
+  background: #edf9f0;
+  color: #26333d;
+}
+
+.zodo-crm-main {
+  display: grid;
+  gap: 14px;
+  align-content: start;
+  background:
+    linear-gradient(rgba(38, 51, 61, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(38, 51, 61, 0.035) 1px, transparent 1px),
+    #ffffff;
+  background-size: 28px 28px;
+  padding: 16px;
+}
+
+.zodo-crm-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.zodo-crm-metric {
+  border: 1px solid rgba(38, 51, 61, 0.1);
+  border-radius: 5px;
+  background: #ffffff;
+  padding: 13px;
+}
+
+.zodo-crm-metric span,
+.zodo-crm-metric small {
+  display: block;
+  color: #65717a;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.zodo-crm-metric strong {
+  display: block;
+  margin-top: 8px;
+  color: #26333d;
+  font-size: 22px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.zodo-crm-metric small {
+  margin-top: 8px;
+  color: var(--metric-color);
+}
+
+.zodo-crm-pipeline {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 9px;
+}
+
+.zodo-crm-stage {
+  border: 1px solid rgba(38, 51, 61, 0.1);
+  border-radius: 5px;
+  background: #ffffff;
+  padding: 11px;
+}
+
+.zodo-crm-stage div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.zodo-crm-stage strong {
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.zodo-crm-stage span {
+  color: #65717a;
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.zodo-crm-stage i {
+  display: block;
+  height: 6px;
+  margin-top: 13px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--stage-color), color-mix(in srgb, var(--stage-color) 22%, white));
+}
+
+.zodo-crm-table {
+  overflow: hidden;
+  border: 1px solid rgba(38, 51, 61, 0.1);
+  border-radius: 5px;
+  background: #ffffff;
+}
+
+.zodo-crm-table-head,
+.zodo-crm-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) 0.55fr 0.8fr;
+  align-items: center;
+  gap: 12px;
+  min-height: 45px;
+  padding: 0 14px;
+}
+
+.zodo-crm-table-head {
+  border-bottom: 1px solid rgba(38, 51, 61, 0.1);
+  background: #f7f8f6;
+  color: #65717a;
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.zodo-crm-row + .zodo-crm-row {
+  border-top: 1px solid rgba(38, 51, 61, 0.08);
+}
+
+.zodo-crm-row span,
+.zodo-crm-row strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 13px;
+}
+
+.zodo-crm-row span,
+.zodo-crm-row strong {
+  color: #26333d;
+  font-weight: 900;
+}
+
+.zodo-crm-row em {
+  justify-self: start;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--status-color) 18%, white);
+  color: #26333d;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 900;
+  padding: 6px 9px;
+}
+
 .home-sticky-copy {
   align-self: start;
   position: sticky;
@@ -1818,6 +2087,43 @@ body {
     justify-content: flex-start;
     min-height: 56px;
     padding-inline: 16px;
+  }
+
+  .zodo-crm-topbar,
+  .zodo-crm-layout,
+  .zodo-crm-summary,
+  .zodo-crm-pipeline {
+    grid-template-columns: 1fr;
+  }
+
+  .zodo-crm-search {
+    order: 3;
+  }
+
+  .zodo-crm-topbar button {
+    justify-self: start;
+  }
+
+  .zodo-crm-sidebar {
+    display: none;
+  }
+
+  .zodo-crm-layout {
+    min-height: 0;
+  }
+
+  .zodo-crm-main {
+    padding: 12px;
+  }
+
+  .zodo-crm-table-head,
+  .zodo-crm-row {
+    grid-template-columns: minmax(0, 1fr) 72px;
+  }
+
+  .zodo-crm-table-head span:last-child,
+  .zodo-crm-row em {
+    display: none;
   }
 
   .home-sticky-copy {

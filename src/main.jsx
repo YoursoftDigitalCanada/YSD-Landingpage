@@ -992,6 +992,10 @@ function ProductDetail({ product }) {
 }
 
 function ProductPreview({ product, compact = false }) {
+  if (product.slug === "zodo-crm") {
+    return <ZodoCrmPreview compact={compact} />;
+  }
+
   return (
     <div className={cx("rounded-brand border border-line bg-white p-5 shadow-quiet reveal", compact && "shadow-none")}>
       <div className="mb-5 flex items-center justify-between border-b border-line pb-4">
@@ -1009,6 +1013,93 @@ function ProductPreview({ product, compact = false }) {
             <span className="h-2 w-16 rounded-full" style={{ backgroundColor: themeColors[index % themeColors.length] }} />
           </div>
         ))}
+      </div>
+    </div>
+  );
+}
+
+function ZodoCrmPreview({ compact = false }) {
+  const pipeline = [
+    ["New Leads", "42", themeColors[0]],
+    ["Qualified", "28", themeColors[1]],
+    ["Proposal", "16", themeColors[2]],
+    ["Won", "9", themeColors[3]]
+  ];
+  const deals = [
+    ["Northline Homes", "$18.4K", "Proposal", themeColors[2]],
+    ["Maple HR Group", "$9.8K", "Qualified", themeColors[1]],
+    ["Surrey Dental Co.", "$6.2K", "Follow-up", themeColors[0]]
+  ];
+
+  return (
+    <div className={cx("zodo-crm-preview reveal", compact && "zodo-crm-preview-compact")}>
+      <div className="zodo-crm-topbar">
+        <div className="zodo-crm-brand">
+          <span>Z</span>
+          <div>
+            <strong>Zodo CRM</strong>
+            <small>Sales workspace</small>
+          </div>
+        </div>
+        <div className="zodo-crm-search">
+          <Search size={15} />
+          <span>Search leads, deals, tasks</span>
+        </div>
+        <button type="button">New Lead</button>
+      </div>
+
+      <div className="zodo-crm-layout">
+        <aside className="zodo-crm-sidebar" aria-label="CRM navigation preview">
+          {["Dashboard", "Leads", "Pipeline", "Automation"].map((item, index) => (
+            <span key={item} className={index === 1 ? "is-active" : ""}>
+              <span style={{ backgroundColor: themeColors[index] }} />
+              {item}
+            </span>
+          ))}
+        </aside>
+
+        <main className="zodo-crm-main">
+          <div className="zodo-crm-summary">
+            {[
+              ["Active leads", "1,248", "+18%"],
+              ["Pipeline value", "$142K", "+24%"],
+              ["Follow-ups", "38", "Today"]
+            ].map(([label, value, meta], index) => (
+              <div key={label} className="zodo-crm-metric" style={{ "--metric-color": themeColors[index] }}>
+                <span>{label}</span>
+                <strong>{value}</strong>
+                <small>{meta}</small>
+              </div>
+            ))}
+          </div>
+
+          <div className="zodo-crm-pipeline">
+            {pipeline.map(([label, count, color]) => (
+              <div key={label} className="zodo-crm-stage" style={{ "--stage-color": color }}>
+                <div>
+                  <strong>{label}</strong>
+                  <span>{count}</span>
+                </div>
+                <i />
+              </div>
+            ))}
+          </div>
+
+          <div className="zodo-crm-table">
+            <div className="zodo-crm-table-head">
+              <span>Company</span>
+              <span>Value</span>
+              <span>Status</span>
+            </div>
+            {deals.map(([companyName, value, status, color]) => (
+              <div key={companyName} className="zodo-crm-row">
+                <span>{companyName}</span>
+                <strong>{value}</strong>
+                <em style={{ "--status-color": color }}>{status}</em>
+              </div>
+            ))}
+          </div>
+        </main>
       </div>
     </div>
   );
