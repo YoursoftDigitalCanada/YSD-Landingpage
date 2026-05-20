@@ -761,7 +761,9 @@ body {
 
 .noratrix-phone {
   position: relative;
-  width: min(58%, 330px);
+  width: min(72%, 430px);
+  max-height: 820px;
+  object-fit: contain;
   filter: drop-shadow(0 30px 42px rgba(37, 99, 235, 0.16));
   animation: floating2 7s ease-in-out infinite;
 }

@@ -719,7 +719,7 @@ function NoratrixProductShowcase() {
           </div>
           <div className="noratrix-phone-stage reveal">
             <img className="noratrix-rings" src="/assets/noratrix/rings-bg.png" alt="" />
-            <img className="noratrix-phone" src="/assets/noratrix/phone.png" alt="Mobile product preview" />
+            <img className="noratrix-phone" src="/assets/noratrix/zodo-crm-mobile-preview.png" alt="Zodo CRM mobile dashboard preview" />
           </div>
         </div>
       </div>
