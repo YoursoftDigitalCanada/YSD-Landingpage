@@ -748,7 +748,7 @@ body {
 .noratrix-phone-stage {
   position: relative;
   display: grid;
-  min-height: 560px;
+  min-height: 520px;
   place-items: center;
 }
 
@@ -761,8 +761,8 @@ body {
 
 .noratrix-phone {
   position: relative;
-  width: min(72%, 430px);
-  max-height: 820px;
+  width: min(58%, 330px);
+  max-height: 620px;
   object-fit: contain;
   filter: drop-shadow(0 30px 42px rgba(37, 99, 235, 0.16));
   animation: floating2 7s ease-in-out infinite;
