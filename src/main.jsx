@@ -189,7 +189,7 @@ function LogoMark({ className = "h-10 w-10" }) {
 function LogoLockup({ className = "h-12 w-48" }) {
   return (
     <img
-      src="/assets/yoursoft-digital-logo-lockup.png"
+      src="/assets/yoursoft-digital-logo-new.png"
       alt="Yoursoft Digital"
       className={cx("object-contain object-left", className)}
     />
