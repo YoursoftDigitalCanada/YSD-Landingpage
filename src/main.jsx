@@ -118,7 +118,7 @@ const packages = [
   }
 ];
 
-const themeColors = ["#49D879", "#2EC7D9", "#FFC62E", "#FF7417"];
+const themeColors = ["#10B981", "#06B6D4", "#F59E0B", "#F97316"];
 
 function cx(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -164,8 +164,8 @@ function ButtonLink({ to, children, variant = "primary", className }) {
       className={cx(
         "inline-flex min-h-11 items-center justify-center gap-2 rounded-brand px-5 py-3 text-sm font-semibold transition",
         variant === "primary"
-          ? "bg-brandGreen text-ink hover:-translate-y-0.5 hover:shadow-[0_12px_30px_rgba(73,216,121,0.25)]"
-          : "border border-line bg-white text-ink hover:border-brandCyan hover:bg-soft",
+          ? "zodo-primary-button hover:-translate-y-0.5"
+          : "zodo-secondary-button border border-line text-ink hover:border-brandCyan",
         className
       )}
     >
@@ -1129,7 +1129,7 @@ function Contact() {
               <span className="text-sm font-bold text-ink">Project details</span>
               <textarea className="mt-2 min-h-36 w-full rounded-brand border border-line bg-white px-4 py-3 outline-none transition focus:border-ink" placeholder="Tell us about your goals, timeline, and current website or system." />
             </label>
-            <button className="mt-6 inline-flex min-h-11 items-center justify-center gap-2 rounded-brand bg-brandGreen px-5 py-3 text-sm font-semibold text-ink transition hover:-translate-y-0.5 hover:shadow-[0_12px_30px_rgba(73,216,121,0.24)]" type="button">
+            <button className="zodo-primary-button mt-6 inline-flex min-h-11 items-center justify-center gap-2 px-5 py-3 text-sm font-semibold transition hover:-translate-y-0.5" type="button">
               Send Message
               <ArrowRight size={17} />
             </button>
