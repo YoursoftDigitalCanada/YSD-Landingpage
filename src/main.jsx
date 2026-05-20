@@ -822,7 +822,7 @@ function ProductPanel({ product, color = themeColors[1] }) {
 function About() {
   return (
     <>
-      <PageHero eyebrow="About" title="A Canada-based IT company built for practical growth." text="Yoursoft Digital helps businesses move from scattered ideas and manual workflows to clear digital systems, customer-ready design, and software that can scale." />
+      <AboutHero />
       <section className="section">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 lg:grid-cols-3 lg:px-8">
           {[
@@ -843,6 +843,47 @@ function About() {
       </section>
       <CTA title="Build with a Canadian IT partner." text="Bring us your website, app, marketing, or SaaS idea. We will help shape the next move." cta="Talk to Our Team" />
     </>
+  );
+}
+
+function AboutHero() {
+  return (
+    <section className="about-noratrix-hero border-b border-line">
+      <ParticleField />
+      <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-16 lg:grid-cols-2 lg:px-8">
+        <div className="about-hero-meter reveal">
+          <div className="about-hero-orbit about-hero-orbit-one" />
+          <div className="about-hero-orbit about-hero-orbit-two" />
+          <img src="/assets/noratrix/about.png" alt="Yoursoft Digital team building connected business systems" />
+          <div className="about-hero-growth">
+            <span>Canada-based</span>
+            <strong>Services + SaaS</strong>
+            <p>Digital systems for lead capture, workflows, and product growth.</p>
+          </div>
+        </div>
+        <div className="about-hero-content reveal">
+          <div className="dream-dots" aria-hidden="true">
+            {themeColors.map((color) => (
+              <span key={color} style={{ backgroundColor: color }} />
+            ))}
+            <span style={{ backgroundColor: themeColors[1] }} />
+            <span style={{ backgroundColor: themeColors[2] }} />
+            <span style={{ backgroundColor: themeColors[3] }} />
+          </div>
+          <p className="about-hero-eyebrow">About Yoursoft Digital</p>
+          <h1>A Canada-based IT company built for practical growth.</h1>
+          <p>Yoursoft Digital helps businesses move from scattered ideas and manual workflows to clear digital systems, customer-ready design, and software that can scale.</p>
+          <p>Our team blends web, app, marketing, design, and SaaS product thinking so every launch supports the next business move.</p>
+          <div className="about-hero-actions">
+            <ButtonLink to="/contact">Request Quote</ButtonLink>
+            <a className="zodo-secondary-button inline-flex min-h-11 items-center justify-center gap-2 border border-line px-5 py-3 text-sm font-semibold text-ink hover:border-brandCyan" href={`tel:${company.phone.replace(/[^+\d]/g, "")}`}>
+              <Phone size={17} />
+              Call Now
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
 
