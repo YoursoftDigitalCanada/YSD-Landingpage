@@ -485,51 +485,28 @@ function HeroTrustLine() {
 function Home() {
   return (
     <>
-      <section className="premium-hero zoho-inspired-hero overflow-hidden border-b border-line bg-white">
-        <div className="zoho-hero-panels" aria-hidden="true">
-          {Array.from({ length: 9 }, (_, index) => {
-            const color = themeColors[index % themeColors.length];
-            return (
-              <span
-                key={`${color}-${index}`}
-                style={{
-                  "--panel-color": color,
-                  animationDelay: `${index * 90}ms, ${index * 520}ms`
-                }}
-              />
-            );
-          })}
-        </div>
-        <div className="zoho-ask-bar">
-          <Bot size={18} />
-          <span>Ask Yoursoft: services, products, pricing, and project planning</span>
-          <Sparkles size={18} />
-        </div>
-        <div className="mx-auto flex min-h-[calc(100svh-124px)] max-w-7xl flex-col items-center justify-center px-5 py-8 text-center sm:py-10 lg:px-8">
-          <div className="hero-copy zoho-hero-copy mx-auto">
-            <h1 className="hero-title text-balance text-5xl font-black tracking-tight md:text-7xl">
-              The easiest digital growth system for modern businesses.
-            </h1>
-            <p className="hero-subtitle mx-auto mt-6 max-w-3xl text-xl leading-8 text-muted">
-              Intelligent websites, apps, marketing, and SaaS products built together so your team can capture leads, launch faster, and operate cleaner.
+      <section className="noratrix-hero">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 lg:grid-cols-2 lg:px-8">
+          <div className="noratrix-hero-content">
+            <div className="noratrix-promo-section">
+              <div className="noratrix-integration-link">
+                <span className="noratrix-integration-icon">
+                  <img src="/assets/noratrix/img-dollar.svg" width="24" height="24" alt="" />
+                </span>
+                <span className="noratrix-integration-text">Discover a new Solutions to Grow your Business!</span>
+              </div>
+            </div>
+            <h1>Creative IT Solutions To Grow Your Business</h1>
+            <p>
+              Yoursoft Digital builds websites, apps, marketing systems, and SaaS products that help modern businesses capture leads and operate smarter.
             </p>
-            <div className="hero-actions mt-7 flex flex-col justify-center gap-3 sm:flex-row">
-              <ButtonLink to="/contact">Request Quote</ButtonLink>
-              <ButtonLink to="/products" variant="secondary">Explore Products</ButtonLink>
+            <div className="noratrix-btn-group">
+              <Link to="/services" className="noratrix-dream-btn">our Services</Link>
+              <Link to="/contact" className="noratrix-dream-btn">contact us</Link>
             </div>
           </div>
-          <div className="zoho-proof-row hero-proof">
-            <div className="zoho-proof-badge">
-              <span>CA</span>
-              <small>Surrey, BC</small>
-            </div>
-            <div className="zoho-proof-copy">
-              <strong>Canada-based IT services and SaaS product team</strong>
-              <span>Web, apps, CRM, ATS, AI chatbot, design, and marketing in one connected delivery system.</span>
-            </div>
-            <Link to="/contact" className="zoho-proof-link">
-              Start a project <ArrowRight size={16} />
-            </Link>
+          <div className="noratrix-banner-box">
+            <img src="/assets/noratrix/banner2.png" alt="Digital solution preview" />
           </div>
         </div>
       </section>
