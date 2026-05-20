@@ -510,16 +510,323 @@ function Home() {
           </div>
         </div>
       </section>
-      <TrustBar />
-      <ServicesOverview />
-      <ProductsHighlight />
-      <HomeProcess />
-      <IndustriesSection />
-      <ConnectedSystem />
-      <WhyChoose />
-      <HomeFAQ />
+      <NoratrixHomeSections />
       <CTA title="Ready to turn the next idea into a working system?" text="Tell us what you are building. We will map the fastest path from scope to launch." cta="Start a Project" />
     </>
+  );
+}
+
+function NoratrixHomeSections() {
+  return (
+    <>
+      <NoratrixStats />
+      <NoratrixAboutBlocks />
+      <NoratrixDemoFeatures />
+      <NoratrixCoreServices />
+      <NoratrixProductShowcase />
+      <NoratrixSubscribe />
+      <NoratrixFAQ />
+      <NoratrixPricing />
+      <NoratrixInsights />
+    </>
+  );
+}
+
+function Dots({ centered = false }) {
+  return (
+    <div className={cx("dream-dots", centered && "justify-center")} aria-hidden="true">
+      {[0, 1, 2, 3, 0, 1, 2].map((colorIndex, index) => (
+        <span key={`${colorIndex}-${index}`} style={{ backgroundColor: themeColors[colorIndex] }} />
+      ))}
+    </div>
+  );
+}
+
+function NoratrixSectionHeading({ eyebrow, title, text, light = false }) {
+  return (
+    <div className={cx("noratrix-section-heading reveal", light && "noratrix-section-heading-light")}>
+      <Dots centered />
+      <p>{eyebrow}</p>
+      <h2>{title}</h2>
+      <span>{text}</span>
+    </div>
+  );
+}
+
+function NoratrixStats() {
+  const stats = [
+    ["Canada base", "Surrey, BC"],
+    ["Service lines", "4+"],
+    ["SaaS products", "3"],
+    ["Launch focus", "100%"]
+  ];
+
+  return (
+    <section className="noratrix-st-bg">
+      <div className="mx-auto grid max-w-7xl gap-5 px-5 py-12 sm:grid-cols-2 lg:grid-cols-4 lg:px-8">
+        {stats.map(([label, value], index) => (
+          <div key={label} className="noratrix-cool-fact reveal" style={{ "--box-color": themeColors[index] }}>
+            <div className="noratrix-cool-icon">
+              {[UserRoundCheck, Check, Cpu, Target].map((Icon, iconIndex) => Icon && iconIndex === index ? <Icon key={label} size={24} /> : null)}
+            </div>
+            <strong>{value}</strong>
+            <span>{label}</span>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function NoratrixAboutBlocks() {
+  const blocks = [
+    {
+      image: "/assets/noratrix/about.png",
+      title: "We complete every project with care around real business goals.",
+      text: [
+        "Yoursoft Digital builds websites, apps, campaigns, creative systems, and SaaS workflows that help teams capture demand and manage it cleanly.",
+        "Instead of treating design, engineering, and growth as separate tracks, we plan each project as one connected digital system."
+      ],
+      action: "Explore Services",
+      to: "/services"
+    },
+    {
+      image: "/assets/noratrix/about2.png",
+      title: "Services build the foundation. Products add the innovation layer.",
+      text: [
+        "Zodo CRM, ATS System, and AI Chatbot give businesses practical tools for sales, hiring, support, and automation.",
+        "That product mindset shapes every service project with cleaner UX, stronger architecture, and better long-term scalability."
+      ],
+      action: "View Products",
+      to: "/products",
+      reverse: true
+    }
+  ];
+
+  return (
+    <section className="noratrix-about-area">
+      <div className="mx-auto grid max-w-7xl gap-16 px-5 py-20 lg:px-8">
+        {blocks.map((block, index) => (
+          <div key={block.title} className={cx("noratrix-about-row", block.reverse && "noratrix-about-row-reverse")}>
+            <div className="noratrix-about-image reveal">
+              <img src={block.image} alt="" />
+              {index === 0 && (
+                <div className="noratrix-growing-company">
+                  <p>* Growing digital systems for Canadian businesses</p>
+                </div>
+              )}
+            </div>
+            <div className="noratrix-about-copy reveal">
+              <Dots />
+              <h2>{block.title}</h2>
+              {block.text.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+              <ButtonLink to={block.to} className="mt-7">{block.action}</ButtonLink>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function NoratrixDemoFeatures() {
+  const featureRows = [
+    ["Strategy-first builds", "Every website, app, and product workflow starts with the customer journey, offer, and conversion path.", "/assets/noratrix/d1.png"],
+    ["Responsive product UX", "Interfaces are designed for fast scanning, mobile performance, and teams that use the system every day.", "/assets/noratrix/d2.png"],
+    ["Connected automation", "CRM, ATS, chatbot, forms, dashboards, and reporting can connect into one practical operating layer.", "/assets/noratrix/d3.png"]
+  ];
+
+  return (
+    <section className="noratrix-demo-section">
+      <div className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
+        <NoratrixSectionHeading eyebrow="Demo" title="A connected digital system, not isolated deliverables." text="See how public-facing pages, campaigns, and SaaS workflows can move together from lead capture to follow-up." />
+        <div className="grid items-center gap-10 lg:grid-cols-2">
+          <div className="noratrix-video-card reveal">
+            <img src="/assets/noratrix/bg-4.jpg" alt="Digital strategy preview" />
+            <Link to="/contact" className="noratrix-play-button" aria-label="Book a strategy call">
+              <ArrowRight size={24} />
+            </Link>
+          </div>
+          <div className="grid gap-5">
+            {featureRows.map(([title, text, image]) => (
+              <div key={title} className="noratrix-feature-row reveal">
+                <img src={image} alt="" />
+                <div>
+                  <h3>{title}</h3>
+                  <p>{text}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function NoratrixCoreServices() {
+  const cards = [
+    ["Business Solutions", "Strategy, scope, and digital roadmaps for websites, apps, CRM, ATS, and automation.", "/assets/noratrix/1.svg"],
+    ["Digital Marketing", "SEO, paid ads, social content, and landing pages designed around qualified leads.", "/assets/noratrix/2.svg"],
+    ["Web Development", "Responsive, fast, SEO-friendly websites and portals with conversion-focused structure.", "/assets/noratrix/3.svg"],
+    ["Mobile Applications", "Mobile and web apps with scalable architecture and clean UI/UX flows.", "/assets/noratrix/4.svg"],
+    ["Product Analytics", "Dashboards, CRM reporting, funnel measurement, and product usage visibility.", "/assets/noratrix/5.svg"],
+    ["Creative Systems", "Branding, UI/UX design, graphics, and reusable marketing creative for launch.", "/assets/noratrix/6.svg"]
+  ];
+
+  return (
+    <section className="noratrix-services-area">
+      <div className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
+        <NoratrixSectionHeading eyebrow="Core services" title="Our Core Services" text="Everything Yoursoft Digital offers is built to support lead generation, operations, and product growth." />
+        <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-3">
+          {cards.map(([title, text, image], index) => (
+            <Link key={title} to={index < 4 ? `/services/${services[index].slug}` : "/contact"} className="noratrix-service-card reveal" style={{ "--box-color": themeColors[index % themeColors.length] }}>
+              <img src={image} alt="" />
+              <h3>{title}</h3>
+              <p>{text}</p>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function NoratrixProductShowcase() {
+  const rows = [
+    ["Zodo CRM", "Manage leads, pipelines, follow-ups, and sales visibility in one practical CRM workspace.", BarChart3],
+    ["ATS System", "Track candidates, hiring stages, and recruiting workflows without spreadsheet chaos.", BriefcaseBusiness],
+    ["AI Chatbot", "Capture leads and support customers automatically from your website and campaigns.", Bot]
+  ];
+
+  return (
+    <section className="noratrix-app-section">
+      <div className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
+        <NoratrixSectionHeading eyebrow="Products" title="SaaS products for daily business operations." text="Yoursoft services create the digital front door. Our products help your team manage what comes through it." />
+        <div className="grid items-center gap-10 lg:grid-cols-[0.95fr_1.05fr]">
+          <div className="grid gap-6">
+            {rows.map(([title, text, Icon], index) => (
+              <Link key={title} to={`/products/${products[index].slug}`} className="noratrix-product-row reveal" style={{ "--box-color": themeColors[index] }}>
+                <span><Icon size={22} /></span>
+                <div>
+                  <h3>{title}</h3>
+                  <p>{text}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <div className="noratrix-phone-stage reveal">
+            <img className="noratrix-rings" src="/assets/noratrix/rings-bg.png" alt="" />
+            <img className="noratrix-phone" src="/assets/noratrix/phone.png" alt="Mobile product preview" />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function NoratrixSubscribe() {
+  return (
+    <section className="noratrix-subscribe-wrap">
+      <div className="mx-auto max-w-6xl px-5 lg:px-8">
+        <div className="noratrix-subscribe reveal">
+          <NoratrixSectionHeading light eyebrow="Updates" title="Don’t miss product and growth updates." text="Get launch notes, service ideas, and practical digital growth insights from Yoursoft Digital." />
+          <div className="noratrix-subscribe-form">
+            <input type="email" placeholder="Enter your email" aria-label="Email address" />
+            <button type="button"><Mail size={18} /> Join</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function NoratrixFAQ() {
+  const faqs = [
+    ["Can Yoursoft build both our website and software?", "Yes. We can deliver websites, apps, CRM workflows, ATS workflows, and chatbots as connected parts of one digital system."],
+    ["Do your products replace custom service work?", "No. Services help shape and launch the right solution; products add repeatable workflows for sales, hiring, and support."],
+    ["Can we start with a smaller package?", "Yes. Many clients begin with a website, landing page, or prototype, then expand into automation and SaaS workflows."],
+    ["Are you based in Canada?", "Yes. Yoursoft Digital is based in Surrey, BC and supports businesses across Canada."]
+  ];
+
+  return (
+    <section className="noratrix-faq-section">
+      <div className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
+        <NoratrixSectionHeading eyebrow="FAQ" title="Frequently Asked Questions" text="Simple answers for businesses comparing websites, apps, marketing, and product automation." />
+        <div className="grid items-center gap-10 lg:grid-cols-[0.95fr_1.05fr]">
+          <div className="noratrix-faq-list">
+            {faqs.map(([question, answer], index) => (
+              <div key={question} className="noratrix-faq-item reveal" style={{ "--box-color": themeColors[index] }}>
+                <h3>{question}</h3>
+                <p>{answer}</p>
+              </div>
+            ))}
+          </div>
+          <img className="noratrix-faq-image reveal" src="/assets/noratrix/faq.svg" alt="Frequently asked questions illustration" />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function NoratrixPricing() {
+  const tiers = [
+    ["Starter Website", "From $1.5K", "For focused business websites and landing pages.", ["Responsive pages", "SEO foundation", "Contact forms", "Launch support"]],
+    ["Growth System", "Custom", "For services, campaigns, CRM, chatbot, and automation.", ["Website + funnels", "Campaign-ready pages", "CRM or chatbot setup", "Analytics handoff"]],
+    ["Product Build", "Custom", "For SaaS, portals, apps, and internal platforms.", ["Product strategy", "UI/UX design", "Full-stack build", "Cloud deployment"]]
+  ];
+
+  return (
+    <section className="noratrix-pricing-section">
+      <div className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
+        <NoratrixSectionHeading eyebrow="Pricing" title="Our Pricing Plans" text="Choose a starting point, then we tailor scope around your goals, timeline, and integrations." />
+        <div className="grid gap-7 lg:grid-cols-3">
+          {tiers.map(([name, price, text, items], index) => (
+            <div key={name} className={cx("noratrix-price-card reveal", index === 1 && "is-active")}>
+              <h3>{name}</h3>
+              <strong>{price}</strong>
+              <p>{text}</p>
+              <div>
+                {items.map((item) => (
+                  <span key={item}><Check size={16} /> {item}</span>
+                ))}
+              </div>
+              <ButtonLink to="/pricing" className="mt-7">Start</ButtonLink>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function NoratrixInsights() {
+  const posts = [
+    ["How to turn a website into a lead system.", "Build service pages, forms, CRM handoff, and analytics around the same conversion path.", "/assets/noratrix/1.jpg"],
+    ["Why SaaS thinking improves service projects.", "Product-grade UX and architecture make websites and apps easier to extend after launch.", "/assets/noratrix/2.jpg"],
+    ["Where AI chatbots fit in SMB growth.", "Use chatbots for qualification, support, routing, and faster response without adding friction.", "/assets/noratrix/3.jpg"]
+  ];
+
+  return (
+    <section className="noratrix-blog-section">
+      <div className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
+        <NoratrixSectionHeading eyebrow="Insights" title="Latest Growth Ideas" text="Practical notes for businesses investing in web, apps, marketing, and SaaS workflows." />
+        <div className="grid gap-7 md:grid-cols-3">
+          {posts.map(([title, text, image]) => (
+            <article key={title} className="noratrix-blog-card reveal">
+              <img src={image} alt="" />
+              <div>
+                <p>Yoursoft Digital</p>
+                <h3>{title}</h3>
+                <span>{text}</span>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
 

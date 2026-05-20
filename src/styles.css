@@ -427,6 +427,503 @@ body {
   margin-top: 32px;
 }
 
+.noratrix-st-bg,
+.noratrix-about-area,
+.noratrix-demo-section {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 10% 10%, rgba(37, 99, 235, 0.1), transparent 28%),
+    radial-gradient(circle at 86% 20%, rgba(14, 165, 233, 0.08), transparent 30%),
+    var(--zodo-bg);
+}
+
+.noratrix-st-bg::before,
+.noratrix-demo-section::before,
+.noratrix-app-section::before,
+.noratrix-faq-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(rgba(24, 24, 27, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(24, 24, 27, 0.035) 1px, transparent 1px);
+  background-size: 46px 46px;
+  mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0.45), transparent 72%);
+}
+
+.noratrix-cool-fact {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  border: 1px solid rgba(228, 228, 231, 0.9);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 28px 18px;
+  text-align: center;
+  box-shadow: 0 18px 48px rgba(15, 23, 42, 0.06);
+  transition: transform 220ms ease, border-color 220ms ease;
+}
+
+.noratrix-cool-fact:hover {
+  transform: translateY(-5px);
+  border-color: color-mix(in srgb, var(--box-color) 38%, var(--zodo-border));
+}
+
+.noratrix-cool-icon {
+  display: grid;
+  width: 54px;
+  height: 54px;
+  place-items: center;
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--box-color) 14%, white);
+  color: var(--box-color);
+}
+
+.noratrix-cool-fact strong {
+  color: var(--zodo-text);
+  font-size: 34px;
+  line-height: 1;
+}
+
+.noratrix-cool-fact span {
+  color: var(--zodo-muted);
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.noratrix-about-row {
+  display: grid;
+  align-items: center;
+  gap: 48px;
+}
+
+@media (min-width: 1024px) {
+  .noratrix-about-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .noratrix-about-row-reverse .noratrix-about-image {
+    order: 2;
+  }
+}
+
+.noratrix-about-image {
+  position: relative;
+  display: grid;
+  min-height: 420px;
+  place-items: center;
+}
+
+.noratrix-about-image::before {
+  content: "";
+  position: absolute;
+  inset: 12% 7% 8%;
+  border-radius: 36px;
+  border: 1px solid rgba(228, 228, 231, 0.9);
+  background:
+    radial-gradient(circle at 25% 20%, rgba(37, 99, 235, 0.12), transparent 35%),
+    rgba(255, 255, 255, 0.72);
+  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.07);
+}
+
+.noratrix-about-image img {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 550px);
+  filter: drop-shadow(0 24px 34px rgba(37, 99, 235, 0.12));
+}
+
+.noratrix-growing-company {
+  position: absolute;
+  z-index: 2;
+  bottom: 2%;
+  left: 8%;
+  border: 1px solid rgba(228, 228, 231, 0.9);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  padding: 11px 16px;
+  box-shadow: 0 16px 44px rgba(15, 23, 42, 0.08);
+}
+
+.noratrix-growing-company p {
+  margin: 0;
+  color: var(--zodo-muted);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.noratrix-about-copy h2 {
+  max-width: 620px;
+  margin: 0 0 20px;
+  color: var(--zodo-text);
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+}
+
+.noratrix-about-copy p {
+  max-width: 620px;
+  margin: 0 0 16px;
+  color: var(--zodo-muted);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.noratrix-section-heading {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  margin: 0 auto 52px;
+  text-align: center;
+}
+
+.noratrix-section-heading p {
+  margin: 0 0 12px;
+  color: var(--zodo-cyan);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.noratrix-section-heading h2 {
+  margin: 0;
+  color: var(--zodo-text);
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+}
+
+.noratrix-section-heading span {
+  display: block;
+  max-width: 650px;
+  margin: 18px auto 0;
+  color: var(--zodo-muted);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.noratrix-section-heading-light p,
+.noratrix-section-heading-light h2,
+.noratrix-section-heading-light span {
+  color: white;
+}
+
+.noratrix-section-heading-light span {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.noratrix-video-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 360px;
+  border-radius: 26px;
+  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.13);
+}
+
+.noratrix-video-card img {
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  object-fit: cover;
+}
+
+.noratrix-video-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.24), rgba(14, 165, 233, 0.12));
+}
+
+.noratrix-play-button {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: 50%;
+  display: grid;
+  width: 74px;
+  height: 74px;
+  translate: -50% -50%;
+  place-items: center;
+  border-radius: 999px;
+  background: var(--zodo-cta);
+  color: white;
+  box-shadow: 0 18px 44px rgba(37, 99, 235, 0.28);
+}
+
+.noratrix-feature-row,
+.noratrix-product-row {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 18px;
+  align-items: center;
+  border: 1px solid rgba(228, 228, 231, 0.9);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  box-shadow: 0 16px 46px rgba(15, 23, 42, 0.055);
+}
+
+.noratrix-feature-row img {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+}
+
+.noratrix-feature-row h3,
+.noratrix-product-row h3,
+.noratrix-service-card h3,
+.noratrix-faq-item h3,
+.noratrix-blog-card h3 {
+  margin: 0;
+  color: var(--zodo-text);
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.noratrix-feature-row p,
+.noratrix-product-row p,
+.noratrix-service-card p,
+.noratrix-faq-item p,
+.noratrix-blog-card span {
+  margin: 8px 0 0;
+  color: var(--zodo-muted);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.noratrix-services-area,
+.noratrix-blog-section {
+  background: white;
+}
+
+.noratrix-service-card {
+  display: grid;
+  justify-items: center;
+  min-height: 300px;
+  border: 1px solid rgba(228, 228, 231, 0.9);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 36px 28px;
+  text-align: center;
+  box-shadow: 0 18px 48px rgba(15, 23, 42, 0.055);
+  transition: transform 220ms ease, border-color 220ms ease;
+}
+
+.noratrix-service-card:hover {
+  transform: translateY(-7px);
+  border-color: color-mix(in srgb, var(--box-color) 38%, var(--zodo-border));
+}
+
+.noratrix-service-card img {
+  width: 78px;
+  height: 78px;
+  object-fit: contain;
+  margin-bottom: 24px;
+}
+
+.noratrix-app-section,
+.noratrix-faq-section {
+  position: relative;
+  overflow: hidden;
+  background: var(--zodo-soft-gradient);
+}
+
+.noratrix-product-row span {
+  display: grid;
+  width: 58px;
+  height: 58px;
+  place-items: center;
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--box-color) 14%, white);
+  color: var(--box-color);
+}
+
+.noratrix-phone-stage {
+  position: relative;
+  display: grid;
+  min-height: 560px;
+  place-items: center;
+}
+
+.noratrix-rings {
+  position: absolute;
+  width: min(82%, 520px);
+  animation: hero-system-spin 28s linear infinite;
+  opacity: 0.86;
+}
+
+.noratrix-phone {
+  position: relative;
+  width: min(58%, 330px);
+  filter: drop-shadow(0 30px 42px rgba(37, 99, 235, 0.16));
+  animation: floating2 7s ease-in-out infinite;
+}
+
+.noratrix-subscribe-wrap {
+  background: white;
+  padding: 64px 0 0;
+}
+
+.noratrix-subscribe {
+  overflow: hidden;
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.22), transparent 28%),
+    linear-gradient(135deg, #1d4ed8, #0ea5e9 52%, #4f46e5);
+  padding: 56px 28px;
+  box-shadow: 0 24px 70px rgba(37, 99, 235, 0.22);
+}
+
+.noratrix-subscribe .noratrix-section-heading {
+  margin-bottom: 28px;
+}
+
+.noratrix-subscribe-form {
+  display: flex;
+  max-width: 620px;
+  margin: 0 auto;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.96);
+  padding: 7px;
+  box-shadow: 0 16px 44px rgba(15, 23, 42, 0.12);
+}
+
+.noratrix-subscribe-form input {
+  min-width: 0;
+  flex: 1;
+  border: 0;
+  background: transparent;
+  padding: 0 18px;
+  color: var(--zodo-text);
+  outline: none;
+}
+
+.noratrix-subscribe-form button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 0;
+  border-radius: 14px;
+  background: var(--zodo-cta);
+  color: white;
+  font-weight: 800;
+  padding: 14px 20px;
+}
+
+.noratrix-faq-list {
+  display: grid;
+  gap: 16px;
+}
+
+.noratrix-faq-item {
+  border-left: 4px solid var(--box-color);
+  border-radius: 18px;
+  background: white;
+  padding: 22px 24px;
+  box-shadow: 0 16px 46px rgba(15, 23, 42, 0.055);
+}
+
+.noratrix-faq-image {
+  width: min(100%, 520px);
+  margin: 0 auto;
+}
+
+.noratrix-pricing-section {
+  background: #eef6ff;
+}
+
+.noratrix-price-card {
+  border: 1px solid rgba(228, 228, 231, 0.9);
+  border-radius: 24px;
+  background: white;
+  padding: 34px 28px;
+  text-align: center;
+  box-shadow: 0 18px 52px rgba(15, 23, 42, 0.06);
+}
+
+.noratrix-price-card.is-active {
+  border-color: rgba(37, 99, 235, 0.28);
+  background:
+    linear-gradient(white, white) padding-box,
+    var(--zodo-cta) border-box;
+  box-shadow: 0 26px 70px rgba(37, 99, 235, 0.14);
+  transform: translateY(-10px);
+}
+
+.noratrix-price-card h3 {
+  margin: 0;
+  color: var(--zodo-text);
+  font-size: 22px;
+}
+
+.noratrix-price-card strong {
+  display: block;
+  margin-top: 18px;
+  color: var(--zodo-emerald);
+  font-size: 42px;
+  line-height: 1;
+}
+
+.noratrix-price-card p {
+  min-height: 52px;
+  margin: 14px 0 24px;
+  color: var(--zodo-muted);
+  line-height: 1.7;
+}
+
+.noratrix-price-card div {
+  display: grid;
+  gap: 12px;
+  text-align: left;
+}
+
+.noratrix-price-card span {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--zodo-text-soft);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.noratrix-price-card svg {
+  color: var(--zodo-cyan);
+}
+
+.noratrix-blog-card {
+  overflow: hidden;
+  border: 1px solid rgba(228, 228, 231, 0.9);
+  border-radius: 22px;
+  background: white;
+  box-shadow: 0 18px 52px rgba(15, 23, 42, 0.06);
+}
+
+.noratrix-blog-card img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+}
+
+.noratrix-blog-card div {
+  padding: 24px;
+}
+
+.noratrix-blog-card p {
+  margin: 0 0 10px;
+  color: var(--zodo-cyan);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
 .zoho-inspired-hero {
   min-height: calc(100svh - 72px);
   background:
