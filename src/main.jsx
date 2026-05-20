@@ -118,7 +118,7 @@ const packages = [
   }
 ];
 
-const themeColors = ["#5ACF3F", "#22C7F2", "#FFD93D", "#FF8A1F"];
+const themeColors = ["#2563EB", "#0EA5E9", "#38BDF8", "#4F46E5"];
 
 function cx(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -1215,7 +1215,7 @@ function CTA({ title, text, cta }) {
 
 function Footer() {
   return (
-    <footer className="border-t border-ink bg-ink text-white">
+    <footer className="border-t border-[#0b1220] bg-[#0b1220] text-white">
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 md:grid-cols-4 lg:px-8">
         <div>
           <div className="inline-flex rounded-brand bg-white px-3 py-2">
