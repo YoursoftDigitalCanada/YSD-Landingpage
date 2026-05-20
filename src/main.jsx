@@ -118,7 +118,7 @@ const packages = [
   }
 ];
 
-const themeColors = ["#10B981", "#06B6D4", "#F59E0B", "#F97316"];
+const themeColors = ["#5ACF3F", "#22C7F2", "#FFD93D", "#FF8A1F"];
 
 function cx(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -291,7 +291,7 @@ function Navbar() {
             const items = dropdowns[label];
             if (!items) {
               return (
-                <Link key={to} to={to} className="text-sm font-medium text-muted transition hover:text-ink">
+                  <Link key={to} to={to} className="text-sm font-medium text-muted transition hover:text-brandCyan">
                   {label}
                 </Link>
               );
@@ -299,7 +299,7 @@ function Navbar() {
 
             return (
               <div key={to} className="group relative flex h-[72px] items-center">
-                <Link to={to} className="inline-flex items-center gap-1 text-sm font-medium text-muted transition hover:text-ink group-hover:text-ink">
+                <Link to={to} className="inline-flex items-center gap-1 text-sm font-medium text-muted transition hover:text-brandCyan group-hover:text-brandCyan">
                   {label}
                   <ChevronRight size={14} className="rotate-90 transition group-hover:translate-y-0.5" />
                 </Link>
@@ -1215,23 +1215,25 @@ function CTA({ title, text, cta }) {
 
 function Footer() {
   return (
-    <footer className="border-t border-line bg-white">
+    <footer className="border-t border-ink bg-ink text-white">
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 md:grid-cols-4 lg:px-8">
         <div>
-          <LogoLockup className="h-14 w-60" />
-          <p className="mt-4 text-sm leading-6 text-muted">Canada-based IT services and SaaS products for growth-minded businesses.</p>
+          <div className="inline-flex rounded-brand bg-white px-3 py-2">
+            <LogoLockup className="h-14 w-60" />
+          </div>
+          <p className="mt-4 text-sm leading-6 text-zinc-300">Canada-based IT services and SaaS products for growth-minded businesses.</p>
         </div>
         <FooterLinks title="Services" links={services.map((service) => [`/services/${service.slug}`, service.title])} />
         <FooterLinks title="Products" links={products.map((product) => [`/products/${product.slug}`, product.title])} />
         <div>
-          <p className="font-bold text-ink">Newsletter</p>
-          <p className="mt-3 text-sm text-muted">Product updates, launch notes, and growth ideas.</p>
-          <div className="mt-4 flex rounded-brand border border-line p-1">
-            <input className="min-w-0 flex-1 px-3 text-sm outline-none" placeholder="Email address" />
-            <button className="rounded-brand bg-brandYellow px-3 py-2 text-sm font-bold text-ink" type="button">Join</button>
+          <p className="font-bold text-white">Newsletter</p>
+          <p className="mt-3 text-sm text-zinc-300">Product updates, launch notes, and growth ideas.</p>
+          <div className="mt-4 flex rounded-brand border border-white/10 bg-white/8 p-1">
+            <input className="min-w-0 flex-1 bg-transparent px-3 text-sm text-white outline-none placeholder:text-zinc-500" placeholder="Email address" />
+            <button className="rounded-brand bg-brandOrange px-3 py-2 text-sm font-bold text-white" type="button">Join</button>
           </div>
-          <p className="mt-5 text-sm text-muted">{company.email}</p>
-          <p className="mt-1 text-sm text-muted">{company.address}</p>
+          <p className="mt-5 text-sm text-zinc-300">{company.email}</p>
+          <p className="mt-1 text-sm text-zinc-300">{company.address}</p>
         </div>
       </div>
     </footer>
@@ -1241,10 +1243,10 @@ function Footer() {
 function FooterLinks({ title, links }) {
   return (
     <div>
-      <p className="font-bold text-ink">{title}</p>
+      <p className="font-bold text-white">{title}</p>
       <div className="mt-4 grid gap-3">
         {links.map(([to, label]) => (
-          <Link key={to} to={to} className="text-sm text-muted hover:text-ink">
+          <Link key={to} to={to} className="text-sm text-zinc-300 transition hover:text-brandCyan">
             {label}
           </Link>
         ))}
