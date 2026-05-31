@@ -118,7 +118,7 @@ const packages = [
   }
 ];
 
-const themeColors = ["#1E40AF", "#06B6D4", "#F97316", "#10B981"];
+const themeColors = ["#0F9F76", "#06B6D4", "#F59E0B", "#05111A"];
 
 function cx(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -281,7 +281,7 @@ function Navbar() {
     Products: productLinks
   };
   return (
-    <header className="sticky top-0 z-50 border-b border-[#1E40AF] bg-[#1E40AF]/95 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-[#05111A] bg-[#05111A]/95 backdrop-blur-xl">
       <nav className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-5 lg:px-8" aria-label="Main navigation">
         <Link to="/" className="flex items-center rounded-brand bg-white px-2 py-1 shadow-[0_10px_30px_rgba(15,23,42,0.12)]" ariaLabel="Yoursoft Digital home">
           <LogoLockup className="h-12 w-56 sm:w-64" />

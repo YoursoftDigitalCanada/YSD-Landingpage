@@ -5,24 +5,24 @@
 @tailwind utilities;
 
 :root {
-  --zodo-bg: #f8fafc;
+  --zodo-bg: #fcfcfa;
   --zodo-surface: #ffffff;
   --zodo-surface-soft: rgba(255, 255, 255, 0.92);
-  --zodo-text: #111827;
-  --zodo-text-hero: #1e293b;
-  --zodo-text-soft: #334155;
-  --zodo-muted: #64748b;
-  --zodo-muted-light: #94a3b8;
-  --zodo-border: rgba(0, 0, 0, 0.05);
-  --zodo-emerald: #10b981;
+  --zodo-text: #0b1220;
+  --zodo-text-hero: #0b1220;
+  --zodo-text-soft: #52525b;
+  --zodo-muted: #52525b;
+  --zodo-muted-light: #52525b;
+  --zodo-border: #e5e7eb;
+  --zodo-emerald: #0f9f76;
   --zodo-cyan: #06b6d4;
-  --zodo-amber: #f97316;
-  --zodo-orange: #f97316;
-  --zodo-orange-soft: #f97316;
-  --zodo-blue: #1e40af;
-  --zodo-violet: #1e40af;
-  --zodo-cta: linear-gradient(135deg, #1e40af 0%, #1e40af 58%, #06b6d4 100%);
-  --zodo-soft-gradient: linear-gradient(135deg, #f8fafc 0%, #ffffff 45%, #eff6ff 74%, #ecfeff 100%);
+  --zodo-amber: #f59e0b;
+  --zodo-orange: #f59e0b;
+  --zodo-orange-soft: #f59e0b;
+  --zodo-blue: #05111a;
+  --zodo-violet: #05111a;
+  --zodo-cta: linear-gradient(90deg, #0f9f76 0%, #06b6d4 55%, #f59e0b 100%);
+  --zodo-soft-gradient: linear-gradient(135deg, #fcfcfa 0%, #ffffff 45%, #f4f4f4 74%, #f4f4f4 100%);
 }
 
 html {
@@ -39,18 +39,18 @@ body {
   border-radius: 14px;
   background: var(--zodo-cta);
   color: var(--zodo-surface);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06), 0 14px 34px rgba(30, 64, 175, 0.16);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06), 0 14px 34px rgba(6, 182, 212, 0.16);
 }
 
 .zodo-primary-button:hover {
   color: var(--zodo-surface);
-  box-shadow: 0 16px 40px rgba(6, 182, 212, 0.2), 0 10px 28px rgba(30, 64, 175, 0.16);
+  box-shadow: 0 16px 40px rgba(6, 182, 212, 0.2), 0 10px 28px rgba(15, 159, 118, 0.16);
 }
 
 .zodo-secondary-button {
   border-radius: 14px;
   background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 12px 30px rgba(24, 24, 27, 0.05);
+  box-shadow: 0 12px 30px rgba(11, 18, 32, 0.05);
 }
 
 .zodo-secondary-button:hover {
@@ -65,7 +65,7 @@ body {
   min-height: 700px;
   align-items: center;
   overflow: hidden;
-  border-bottom: 1px solid rgba(24, 24, 27, 0.08);
+  border-bottom: 1px solid rgba(11, 18, 32, 0.08);
   background: url("/assets/noratrix/demo2-bg.png") var(--zodo-surface);
   background-position: bottom center;
   background-repeat: no-repeat;
@@ -80,12 +80,12 @@ body {
   z-index: 0;
   pointer-events: none;
   background:
-    radial-gradient(circle at 22% 20%, rgba(30, 64, 175, 0.96), transparent 28%),
+    radial-gradient(circle at 22% 20%, rgba(15, 159, 118, 0.92), transparent 28%),
     radial-gradient(circle at 54% 34%, rgba(6, 182, 212, 0.82), transparent 34%),
-    radial-gradient(circle at 72% 18%, rgba(249, 115, 22, 0.52), transparent 28%),
-    radial-gradient(circle at 76% 68%, rgba(16, 185, 129, 0.42), transparent 34%),
+    radial-gradient(circle at 72% 18%, rgba(5, 17, 26, 0.6), transparent 28%),
+    radial-gradient(circle at 76% 68%, rgba(245, 158, 11, 0.42), transparent 34%),
     radial-gradient(circle at 92% 58%, rgba(6, 182, 212, 0.64), transparent 30%),
-    linear-gradient(135deg, #1e40af 0%, #1e40af 58%, #06b6d4 86%, #10b981 100%);
+    linear-gradient(102deg, #0f9f76 0%, #06b6d4 34%, #05111a 70%, #f59e0b 100%);
   mix-blend-mode: color;
   opacity: 0.98;
 }
@@ -235,7 +235,7 @@ body {
   background:
     linear-gradient(rgba(16, 18, 20, 0.04) 1px, transparent 1px),
     linear-gradient(90deg, rgba(16, 18, 20, 0.04) 1px, transparent 1px),
-    linear-gradient(135deg, rgba(30, 64, 175, 0.12), rgba(6, 182, 212, 0.08) 36%, rgba(249, 115, 22, 0.08) 68%, rgba(16, 185, 129, 0.08));
+    linear-gradient(135deg, rgba(5, 17, 26, 0.12), rgba(6, 182, 212, 0.08) 36%, rgba(245, 158, 11, 0.08) 68%, rgba(15, 159, 118, 0.08));
   background-size: 44px 44px, 44px 44px, 180% 180%;
   mask-image:
     radial-gradient(circle at var(--hero-mask-x) var(--hero-mask-y), #000 0 var(--hero-mask), transparent calc(var(--hero-mask) + 20%)),
@@ -267,7 +267,7 @@ body {
   isolation: isolate;
   overflow: hidden;
   background:
-    radial-gradient(circle at 12% 18%, rgba(30, 64, 175, 0.14), transparent 30%),
+    radial-gradient(circle at 12% 18%, rgba(5, 17, 26, 0.14), transparent 30%),
     radial-gradient(circle at 86% 18%, rgba(6, 182, 212, 0.12), transparent 28%),
     linear-gradient(180deg, var(--zodo-surface) 0%, var(--zodo-bg) 100%);
 }
@@ -278,8 +278,8 @@ body {
   inset: 0;
   z-index: -1;
   background:
-    linear-gradient(rgba(24, 24, 27, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(24, 24, 27, 0.035) 1px, transparent 1px);
+    linear-gradient(rgba(11, 18, 32, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(11, 18, 32, 0.035) 1px, transparent 1px);
   background-size: 46px 46px;
   mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0.64), rgba(0, 0, 0, 0.14), rgba(0, 0, 0, 0.54));
 }
@@ -302,9 +302,9 @@ body {
   inset: 10% 8% 8% 3%;
   border-radius: 36px;
   background:
-    linear-gradient(135deg, rgba(30, 64, 175, 0.13), rgba(6, 182, 212, 0.09)),
+    linear-gradient(135deg, rgba(5, 17, 26, 0.13), rgba(6, 182, 212, 0.09)),
     rgba(255, 255, 255, 0.68);
-  border: 1px solid rgba(228, 228, 231, 0.86);
+  border: 1px solid rgba(229, 231, 235, 0.86);
   box-shadow: 0 24px 70px rgba(15, 23, 42, 0.08);
 }
 
@@ -312,7 +312,7 @@ body {
   position: relative;
   z-index: 2;
   width: min(100%, 560px);
-  filter: drop-shadow(0 24px 38px rgba(30, 64, 175, 0.14));
+  filter: drop-shadow(0 24px 38px rgba(5, 17, 26, 0.14));
   animation: floating2 7s ease-in-out infinite;
 }
 
@@ -329,7 +329,7 @@ body {
   height: 210px;
   left: 5%;
   top: 12%;
-  background: rgba(30, 64, 175, 0.06);
+  background: rgba(5, 17, 26, 0.06);
 }
 
 .about-hero-orbit-two {
@@ -337,7 +337,7 @@ body {
   height: 150px;
   right: 7%;
   bottom: 17%;
-  background: rgba(249, 115, 22, 0.09);
+  background: rgba(245, 158, 11, 0.09);
   animation-delay: -2s;
 }
 
@@ -347,7 +347,7 @@ body {
   left: 8%;
   bottom: 6%;
   width: min(300px, 72%);
-  border: 1px solid rgba(228, 228, 231, 0.9);
+  border: 1px solid rgba(229, 231, 235, 0.9);
   border-radius: 18px;
   background: rgba(255, 255, 255, 0.92);
   box-shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
@@ -392,7 +392,7 @@ body {
   width: 8px;
   height: 8px;
   border-radius: 999px;
-  box-shadow: 0 0 0 4px rgba(30, 64, 175, 0.06);
+  box-shadow: 0 0 0 4px rgba(5, 17, 26, 0.06);
 }
 
 .about-hero-eyebrow {
@@ -433,7 +433,7 @@ body {
   position: relative;
   overflow: hidden;
   background:
-    radial-gradient(circle at 10% 10%, rgba(30, 64, 175, 0.1), transparent 28%),
+    radial-gradient(circle at 10% 10%, rgba(5, 17, 26, 0.1), transparent 28%),
     radial-gradient(circle at 86% 20%, rgba(6, 182, 212, 0.08), transparent 30%),
     var(--zodo-bg);
 }
@@ -447,8 +447,8 @@ body {
   inset: 0;
   pointer-events: none;
   background:
-    linear-gradient(rgba(24, 24, 27, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(24, 24, 27, 0.035) 1px, transparent 1px);
+    linear-gradient(rgba(11, 18, 32, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(11, 18, 32, 0.035) 1px, transparent 1px);
   background-size: 46px 46px;
   mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0.45), transparent 72%);
 }
@@ -459,7 +459,7 @@ body {
   display: grid;
   justify-items: center;
   gap: 10px;
-  border: 1px solid rgba(228, 228, 231, 0.9);
+  border: 1px solid rgba(229, 231, 235, 0.9);
   border-radius: 18px;
   background: rgba(255, 255, 255, 0.9);
   padding: 28px 18px;
@@ -525,9 +525,9 @@ body {
   position: absolute;
   inset: 12% 7% 8%;
   border-radius: 36px;
-  border: 1px solid rgba(228, 228, 231, 0.9);
+  border: 1px solid rgba(229, 231, 235, 0.9);
   background:
-    radial-gradient(circle at 25% 20%, rgba(30, 64, 175, 0.12), transparent 35%),
+    radial-gradient(circle at 25% 20%, rgba(5, 17, 26, 0.12), transparent 35%),
     rgba(255, 255, 255, 0.72);
   box-shadow: 0 24px 70px rgba(15, 23, 42, 0.07);
 }
@@ -536,7 +536,7 @@ body {
   position: relative;
   z-index: 1;
   width: min(100%, 550px);
-  filter: drop-shadow(0 24px 34px rgba(30, 64, 175, 0.12));
+  filter: drop-shadow(0 24px 34px rgba(5, 17, 26, 0.12));
 }
 
 .noratrix-growing-company {
@@ -544,7 +544,7 @@ body {
   z-index: 2;
   bottom: 2%;
   left: 8%;
-  border: 1px solid rgba(228, 228, 231, 0.9);
+  border: 1px solid rgba(229, 231, 235, 0.9);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.92);
   padding: 11px 16px;
@@ -638,7 +638,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(30, 64, 175, 0.24), rgba(6, 182, 212, 0.12));
+  background: linear-gradient(135deg, rgba(5, 17, 26, 0.24), rgba(6, 182, 212, 0.12));
 }
 
 .noratrix-play-button {
@@ -654,7 +654,7 @@ body {
   border-radius: 999px;
   background: var(--zodo-cta);
   color: white;
-  box-shadow: 0 18px 44px rgba(30, 64, 175, 0.28);
+  box-shadow: 0 18px 44px rgba(5, 17, 26, 0.28);
 }
 
 .noratrix-feature-row,
@@ -663,7 +663,7 @@ body {
   grid-template-columns: auto 1fr;
   gap: 18px;
   align-items: center;
-  border: 1px solid rgba(228, 228, 231, 0.9);
+  border: 1px solid rgba(229, 231, 235, 0.9);
   border-radius: 20px;
   background: rgba(255, 255, 255, 0.9);
   padding: 20px;
@@ -707,7 +707,7 @@ body {
   display: grid;
   justify-items: center;
   min-height: 300px;
-  border: 1px solid rgba(228, 228, 231, 0.9);
+  border: 1px solid rgba(229, 231, 235, 0.9);
   border-radius: 22px;
   background: rgba(255, 255, 255, 0.95);
   padding: 36px 28px;
@@ -764,7 +764,7 @@ body {
   width: min(58%, 330px);
   max-height: 620px;
   object-fit: contain;
-  filter: drop-shadow(0 30px 42px rgba(30, 64, 175, 0.16));
+  filter: drop-shadow(0 30px 42px rgba(5, 17, 26, 0.16));
   animation: floating2 7s ease-in-out infinite;
 }
 
@@ -777,10 +777,10 @@ body {
   overflow: hidden;
   border-radius: 28px;
   background:
-    radial-gradient(circle at 20% 20%, rgba(249, 115, 22, 0.22), transparent 28%),
-    linear-gradient(135deg, #1d4ed8, #06b6d4 52%, #10b981);
+    radial-gradient(circle at 20% 20%, rgba(245, 158, 11, 0.22), transparent 28%),
+    linear-gradient(135deg, #05111a, #06b6d4 52%, #0f9f76);
   padding: 56px 28px;
-  box-shadow: 0 24px 70px rgba(30, 64, 175, 0.22);
+  box-shadow: 0 24px 70px rgba(5, 17, 26, 0.22);
 }
 
 .noratrix-subscribe .noratrix-section-heading {
@@ -842,7 +842,7 @@ body {
 }
 
 .noratrix-price-card {
-  border: 1px solid rgba(228, 228, 231, 0.9);
+  border: 1px solid rgba(229, 231, 235, 0.9);
   border-radius: 24px;
   background: white;
   padding: 34px 28px;
@@ -851,11 +851,11 @@ body {
 }
 
 .noratrix-price-card.is-active {
-  border-color: rgba(30, 64, 175, 0.28);
+  border-color: rgba(5, 17, 26, 0.28);
   background:
     linear-gradient(white, white) padding-box,
     var(--zodo-cta) border-box;
-  box-shadow: 0 26px 70px rgba(30, 64, 175, 0.14);
+  box-shadow: 0 26px 70px rgba(5, 17, 26, 0.14);
   transform: translateY(-10px);
 }
 
@@ -901,7 +901,7 @@ body {
 
 .noratrix-blog-card {
   overflow: hidden;
-  border: 1px solid rgba(228, 228, 231, 0.9);
+  border: 1px solid rgba(229, 231, 235, 0.9);
   border-radius: 22px;
   background: white;
   box-shadow: 0 18px 52px rgba(15, 23, 42, 0.06);
@@ -929,16 +929,16 @@ body {
 .zoho-inspired-hero {
   min-height: calc(100svh - 72px);
   background:
-    radial-gradient(circle at 18% 72%, rgba(16, 185, 129, 0.22), transparent 32%),
+    radial-gradient(circle at 18% 72%, rgba(15, 159, 118, 0.22), transparent 32%),
     radial-gradient(circle at 80% 72%, rgba(6, 182, 212, 0.2), transparent 34%),
     linear-gradient(180deg, var(--zodo-surface) 0%, var(--zodo-bg) 100%);
 }
 
 .zoho-inspired-hero::before {
   background:
-    linear-gradient(90deg, rgba(30, 64, 175, 0.08), transparent 18%),
-    linear-gradient(rgba(24, 24, 27, 0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(24, 24, 27, 0.025) 1px, transparent 1px);
+    linear-gradient(90deg, rgba(5, 17, 26, 0.08), transparent 18%),
+    linear-gradient(rgba(11, 18, 32, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(11, 18, 32, 0.025) 1px, transparent 1px);
   background-size: 100% 100%, 46px 46px, 46px 46px;
   mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.72));
   animation: hero-grid-drift 20s ease-in-out infinite alternate;
@@ -978,7 +978,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 12px;
-  border-bottom: 1px solid rgba(24, 24, 27, 0.1);
+  border-bottom: 1px solid rgba(11, 18, 32, 0.1);
   background: rgba(255, 255, 255, 0.82);
   color: var(--zodo-text);
   font-size: 15px;
@@ -1037,8 +1037,8 @@ body {
   border-radius: 999px;
   background:
     linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.72)),
-    radial-gradient(circle at 30% 20%, rgba(30, 64, 175, 0.32), transparent 48%);
-  box-shadow: 0 22px 60px rgba(24, 24, 27, 0.11);
+    radial-gradient(circle at 30% 20%, rgba(5, 17, 26, 0.32), transparent 48%);
+  box-shadow: 0 22px 60px rgba(11, 18, 32, 0.11);
   color: var(--zodo-text);
   animation: proof-float 5.4s ease-in-out infinite;
 }
@@ -1100,7 +1100,7 @@ body {
   width: 42%;
   height: 1px;
   left: -10%;
-  background: linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.34), rgba(30, 64, 175, 0.22), transparent);
+  background: linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.34), rgba(5, 17, 26, 0.22), transparent);
   transform: rotate(-16deg);
   animation: signal-scan 9s linear infinite;
 }
@@ -1112,7 +1112,7 @@ body {
 .particle-field::after {
   top: 68%;
   animation-delay: 3.8s;
-  background: linear-gradient(90deg, transparent, rgba(249, 115, 22, 0.3), rgba(16, 185, 129, 0.22), transparent);
+  background: linear-gradient(90deg, transparent, rgba(245, 158, 11, 0.3), rgba(15, 159, 118, 0.22), transparent);
 }
 
 .particle-mesh {
@@ -1200,16 +1200,16 @@ body {
   position: relative;
   min-height: 430px;
   overflow: hidden;
-  border: 1px solid rgba(24, 24, 27, 0.1);
+  border: 1px solid rgba(11, 18, 32, 0.1);
   border-radius: 5px;
   background:
     radial-gradient(circle at 50% 48%, rgba(255, 255, 255, 0.98) 0 16%, rgba(255, 255, 255, 0.7) 17% 24%, transparent 25%),
-    radial-gradient(circle at 20% 20%, rgba(30, 64, 175, 0.2), transparent 28%),
+    radial-gradient(circle at 20% 20%, rgba(5, 17, 26, 0.2), transparent 28%),
     radial-gradient(circle at 80% 18%, rgba(6, 182, 212, 0.22), transparent 30%),
-    radial-gradient(circle at 80% 82%, rgba(16, 185, 129, 0.16), transparent 28%),
-    radial-gradient(circle at 18% 82%, rgba(249, 115, 22, 0.16), transparent 30%),
+    radial-gradient(circle at 80% 82%, rgba(15, 159, 118, 0.16), transparent 28%),
+    radial-gradient(circle at 18% 82%, rgba(245, 158, 11, 0.16), transparent 30%),
     linear-gradient(135deg, rgba(255, 255, 255, 0.82), rgba(245, 245, 245, 0.74));
-  box-shadow: 0 30px 80px rgba(24, 24, 27, 0.08);
+  box-shadow: 0 30px 80px rgba(11, 18, 32, 0.08);
   animation: console-float 6.5s ease-in-out infinite;
   translate: 0 var(--hero-console-shift);
 }
@@ -1225,8 +1225,8 @@ body {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(rgba(24, 24, 27, 0.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(24, 24, 27, 0.045) 1px, transparent 1px);
+    linear-gradient(rgba(11, 18, 32, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(11, 18, 32, 0.045) 1px, transparent 1px);
   background-size: 38px 38px;
   mask-image: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.8), transparent 68%);
   animation: hero-grid-drift 16s ease-in-out infinite alternate;
@@ -1236,7 +1236,7 @@ body {
   content: "";
   position: absolute;
   inset: -40%;
-  background: conic-gradient(from 90deg, rgba(30, 64, 175, 0), rgba(30, 64, 175, 0.18), rgba(6, 182, 212, 0.18), rgba(249, 115, 22, 0.14), rgba(16, 185, 129, 0.16), rgba(30, 64, 175, 0));
+  background: conic-gradient(from 90deg, rgba(5, 17, 26, 0), rgba(5, 17, 26, 0.18), rgba(6, 182, 212, 0.18), rgba(245, 158, 11, 0.14), rgba(15, 159, 118, 0.16), rgba(5, 17, 26, 0));
   opacity: 0.46;
   animation: hero-system-spin 22s linear infinite;
 }
@@ -1255,7 +1255,7 @@ body {
 .hero-dashboard-glow-one {
   left: 6%;
   top: 16%;
-  background: rgba(30, 64, 175, 0.36);
+  background: rgba(5, 17, 26, 0.36);
 }
 
 .hero-dashboard-glow-two {
@@ -1269,10 +1269,10 @@ body {
   position: relative;
   z-index: 3;
   overflow: hidden;
-  border: 1px solid rgba(24, 24, 27, 0.1);
+  border: 1px solid rgba(11, 18, 32, 0.1);
   border-radius: 5px;
   background: rgba(255, 255, 255, 0.92);
-  box-shadow: 0 30px 80px rgba(24, 24, 27, 0.11);
+  box-shadow: 0 30px 80px rgba(11, 18, 32, 0.11);
 }
 
 .hero-browser-bar {
@@ -1280,7 +1280,7 @@ body {
   grid-template-columns: auto 1fr auto;
   align-items: center;
   gap: 14px;
-  border-bottom: 1px solid rgba(24, 24, 27, 0.08);
+  border-bottom: 1px solid rgba(11, 18, 32, 0.08);
   background: rgba(255, 255, 255, 0.82);
   color: var(--zodo-text-soft);
   font-size: 12px;
@@ -1304,7 +1304,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  border-right: 1px solid rgba(24, 24, 27, 0.08);
+  border-right: 1px solid rgba(11, 18, 32, 0.08);
   background: rgba(245, 245, 245, 0.72);
   padding: 20px 14px;
 }
@@ -1320,7 +1320,7 @@ body {
   display: flex;
   align-items: center;
   gap: 9px;
-  border: 1px solid rgba(24, 24, 27, 0.07);
+  border: 1px solid rgba(11, 18, 32, 0.07);
   border-radius: 5px;
   background: rgba(255, 255, 255, 0.82);
   color: var(--zodo-text);
@@ -1331,7 +1331,7 @@ body {
 }
 
 .hero-sidebar-item:hover {
-  border-color: rgba(24, 24, 27, 0.18);
+  border-color: rgba(11, 18, 32, 0.18);
   transform: translateX(3px);
 }
 
@@ -1369,7 +1369,7 @@ body {
   align-items: center;
   gap: 7px;
   border-radius: 5px;
-  background: rgba(30, 64, 175, 0.18);
+  background: rgba(5, 17, 26, 0.18);
   color: var(--zodo-text);
   font-size: 12px;
   font-weight: 900;
@@ -1382,7 +1382,7 @@ body {
   height: 7px;
   border-radius: 999px;
   background: var(--zodo-emerald);
-  box-shadow: 0 0 0 0 rgba(30, 64, 175, 0.6);
+  box-shadow: 0 0 0 0 rgba(5, 17, 26, 0.6);
   animation: live-dot 1.8s ease-out infinite;
 }
 
@@ -1396,10 +1396,10 @@ body {
   position: relative;
   overflow: hidden;
   min-height: 108px;
-  border: 1px solid rgba(24, 24, 27, 0.08);
+  border: 1px solid rgba(11, 18, 32, 0.08);
   border-radius: 5px;
   background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 14px 34px rgba(24, 24, 27, 0.06);
+  box-shadow: 0 14px 34px rgba(11, 18, 32, 0.06);
   padding: 15px;
   text-align: left;
   opacity: 0;
@@ -1444,7 +1444,7 @@ body {
 
 .hero-chart-panel {
   margin-top: 14px;
-  border: 1px solid rgba(24, 24, 27, 0.08);
+  border: 1px solid rgba(11, 18, 32, 0.08);
   border-radius: 5px;
   background: rgba(255, 255, 255, 0.84);
   padding: 16px;
@@ -1492,7 +1492,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 6px;
-  border: 1px solid rgba(24, 24, 27, 0.08);
+  border: 1px solid rgba(11, 18, 32, 0.08);
   border-radius: 5px;
   background: color-mix(in srgb, var(--box-color) 12%, white);
   color: var(--zodo-text);
@@ -1507,10 +1507,10 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  border: 1px solid color-mix(in srgb, var(--box-color) 32%, rgba(24, 24, 27, 0.08));
+  border: 1px solid color-mix(in srgb, var(--box-color) 32%, rgba(11, 18, 32, 0.08));
   border-radius: 5px;
   background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 18px 50px rgba(24, 24, 27, 0.1);
+  box-shadow: 0 18px 50px rgba(11, 18, 32, 0.1);
   color: var(--zodo-text);
   font-size: 12px;
   font-weight: 900;
@@ -1525,7 +1525,7 @@ body {
 .hero-system-ring {
   position: absolute;
   inset: 50%;
-  border: 1px solid rgba(24, 24, 27, 0.1);
+  border: 1px solid rgba(11, 18, 32, 0.1);
   border-radius: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
@@ -1541,7 +1541,7 @@ body {
   width: 82%;
   aspect-ratio: 1;
   border-style: dashed;
-  border-color: rgba(24, 24, 27, 0.13);
+  border-color: rgba(11, 18, 32, 0.13);
   animation: ring-spin 26s linear infinite;
 }
 
@@ -1562,7 +1562,7 @@ body {
 }
 
 .hero-system-beam-two {
-  background: linear-gradient(90deg, rgba(16, 185, 129, 0.35), transparent);
+  background: linear-gradient(90deg, rgba(15, 159, 118, 0.35), transparent);
   animation-delay: 1.8s;
   transform: rotate(154deg);
 }
@@ -1576,10 +1576,10 @@ body {
   width: 150px;
   height: 150px;
   place-items: center;
-  border: 1px solid rgba(24, 24, 27, 0.08);
+  border: 1px solid rgba(11, 18, 32, 0.08);
   border-radius: 5px;
   background: rgba(255, 255, 255, 0.86);
-  box-shadow: 0 24px 70px rgba(24, 24, 27, 0.14);
+  box-shadow: 0 24px 70px rgba(11, 18, 32, 0.14);
   transform: translate(-50%, -50%);
   animation: core-breathe 4.6s ease-in-out infinite;
 }
@@ -1600,10 +1600,10 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  border: 1px solid rgba(24, 24, 27, 0.09);
+  border: 1px solid rgba(11, 18, 32, 0.09);
   border-radius: 5px;
   background: rgba(255, 255, 255, 0.86);
-  box-shadow: 0 18px 50px rgba(24, 24, 27, 0.09);
+  box-shadow: 0 18px 50px rgba(11, 18, 32, 0.09);
   color: var(--zodo-text);
   padding: 11px 13px;
   font-size: 13px;
@@ -1624,7 +1624,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 9px;
-  border: 1px solid rgba(24, 24, 27, 0.09);
+  border: 1px solid rgba(11, 18, 32, 0.09);
   border-radius: 5px;
   background: rgba(255, 255, 255, 0.82);
   color: var(--zodo-text);
@@ -1645,7 +1645,7 @@ body {
   width: 16px;
   height: 16px;
   border-radius: 5px;
-  box-shadow: 0 16px 36px rgba(24, 24, 27, 0.1);
+  box-shadow: 0 16px 36px rgba(11, 18, 32, 0.1);
   animation: chip-drift 6.2s ease-in-out infinite;
 }
 
@@ -1678,7 +1678,7 @@ body {
 
 .hero-console {
   background-image:
-    linear-gradient(90deg, rgba(30, 64, 175, 0.16), rgba(6, 182, 212, 0.12) 34%, rgba(249, 115, 22, 0.12) 66%, rgba(16, 185, 129, 0.12)),
+    linear-gradient(90deg, rgba(5, 17, 26, 0.16), rgba(6, 182, 212, 0.12) 34%, rgba(245, 158, 11, 0.12) 66%, rgba(15, 159, 118, 0.12)),
     linear-gradient(135deg, rgba(247, 248, 246, 0.95), rgba(255, 255, 255, 0.96));
   animation: console-float 6s ease-in-out infinite;
   transform-origin: center;
@@ -1714,7 +1714,7 @@ body {
   right: -70px;
   top: 62px;
   background:
-    linear-gradient(135deg, rgba(6, 182, 212, 0.26), rgba(30, 64, 175, 0.08)),
+    linear-gradient(135deg, rgba(6, 182, 212, 0.26), rgba(5, 17, 26, 0.08)),
     repeating-linear-gradient(90deg, rgba(16, 18, 20, 0.06) 0 1px, transparent 1px 12px);
   animation: orbit-one 8s ease-in-out infinite;
 }
@@ -1725,7 +1725,7 @@ body {
   left: -58px;
   bottom: 52px;
   background:
-    linear-gradient(135deg, rgba(249, 115, 22, 0.22), rgba(16, 185, 129, 0.09)),
+    linear-gradient(135deg, rgba(245, 158, 11, 0.22), rgba(15, 159, 118, 0.09)),
     repeating-linear-gradient(0deg, rgba(16, 18, 20, 0.06) 0 1px, transparent 1px 12px);
   animation: orbit-two 9s ease-in-out infinite;
 }
@@ -1833,10 +1833,10 @@ body {
 .home-proof-card,
 .home-faq-box {
   position: relative;
-  border: 1px solid rgba(24, 24, 27, 0.08);
+  border: 1px solid rgba(11, 18, 32, 0.08);
   border-radius: 5px;
   background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 18px 50px rgba(24, 24, 27, 0.06);
+  box-shadow: 0 18px 50px rgba(11, 18, 32, 0.06);
   overflow: hidden;
   transition: transform 240ms ease, border-color 240ms ease, box-shadow 240ms ease;
 }
@@ -1849,8 +1849,8 @@ body {
 .home-flow-card:hover,
 .home-proof-card:hover,
 .home-faq-box:hover {
-  border-color: color-mix(in srgb, var(--box-color) 42%, rgba(24, 24, 27, 0.1));
-  box-shadow: 0 24px 60px rgba(24, 24, 27, 0.11);
+  border-color: color-mix(in srgb, var(--box-color) 42%, rgba(11, 18, 32, 0.1));
+  box-shadow: 0 24px 60px rgba(11, 18, 32, 0.11);
   transform: translateY(-4px);
 }
 
@@ -1906,22 +1906,22 @@ body {
   position: relative;
   overflow: hidden;
   background:
-    radial-gradient(circle at 14% 8%, rgba(30, 64, 175, 0.16), transparent 28%),
+    radial-gradient(circle at 14% 8%, rgba(5, 17, 26, 0.16), transparent 28%),
     radial-gradient(circle at 86% 18%, rgba(6, 182, 212, 0.14), transparent 28%),
     var(--zodo-soft-gradient);
 }
 
 .home-audience-section {
   background:
-    radial-gradient(circle at 12% 24%, rgba(249, 115, 22, 0.14), transparent 28%),
-    radial-gradient(circle at 86% 72%, rgba(16, 185, 129, 0.16), transparent 30%),
+    radial-gradient(circle at 12% 24%, rgba(245, 158, 11, 0.14), transparent 28%),
+    radial-gradient(circle at 86% 72%, rgba(15, 159, 118, 0.16), transparent 30%),
     var(--zodo-soft-gradient);
 }
 
 .home-proof-section {
   background:
     radial-gradient(circle at 16% 20%, rgba(6, 182, 212, 0.16), transparent 28%),
-    radial-gradient(circle at 88% 70%, rgba(30, 64, 175, 0.18), transparent 30%),
+    radial-gradient(circle at 88% 70%, rgba(5, 17, 26, 0.18), transparent 30%),
     var(--zodo-soft-gradient);
 }
 
@@ -2037,10 +2037,10 @@ body {
 }
 
 .home-product-lab {
-  border: 1px solid rgba(24, 24, 27, 0.08);
+  border: 1px solid rgba(11, 18, 32, 0.08);
   border-radius: 5px;
   background: rgba(255, 255, 255, 0.78);
-  box-shadow: 0 26px 70px rgba(24, 24, 27, 0.08);
+  box-shadow: 0 26px 70px rgba(11, 18, 32, 0.08);
   overflow: hidden;
 }
 
@@ -2048,7 +2048,7 @@ body {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1px;
-  background: #e4e4e7;
+  background: #e5e7eb;
 }
 
 .home-product-tab {
@@ -2071,7 +2071,7 @@ body {
 .home-product-preview {
   overflow: hidden;
   background:
-    radial-gradient(circle at 18% 20%, rgba(30, 64, 175, 0.13), transparent 30%),
+    radial-gradient(circle at 18% 20%, rgba(5, 17, 26, 0.13), transparent 30%),
     radial-gradient(circle at 84% 74%, rgba(6, 182, 212, 0.13), transparent 30%),
     var(--zodo-surface);
 }
@@ -2113,10 +2113,10 @@ body {
 
 .zodo-crm-preview {
   overflow: hidden;
-  border: 1px solid rgba(24, 24, 27, 0.12);
+  border: 1px solid rgba(11, 18, 32, 0.12);
   border-radius: 5px;
   background: var(--zodo-surface);
-  box-shadow: 0 22px 56px rgba(24, 24, 27, 0.1);
+  box-shadow: 0 22px 56px rgba(11, 18, 32, 0.1);
   color: var(--zodo-text);
   transform: translateZ(0);
   -webkit-font-smoothing: antialiased;
@@ -2132,7 +2132,7 @@ body {
   grid-template-columns: minmax(150px, 0.8fr) minmax(180px, 1fr) auto;
   align-items: center;
   gap: 14px;
-  border-bottom: 1px solid rgba(24, 24, 27, 0.1);
+  border-bottom: 1px solid rgba(11, 18, 32, 0.1);
   background: var(--zodo-surface);
   padding: 14px;
 }
@@ -2177,7 +2177,7 @@ body {
   min-height: 38px;
   align-items: center;
   gap: 8px;
-  border: 1px solid rgba(24, 24, 27, 0.1);
+  border: 1px solid rgba(11, 18, 32, 0.1);
   border-radius: 5px;
   background: var(--zodo-bg);
   padding: 0 12px;
@@ -2209,7 +2209,7 @@ body {
   display: grid;
   align-content: start;
   gap: 7px;
-  border-right: 1px solid rgba(24, 24, 27, 0.1);
+  border-right: 1px solid rgba(11, 18, 32, 0.1);
   background: var(--zodo-bg);
   padding: 14px;
 }
@@ -2235,7 +2235,7 @@ body {
 }
 
 .zodo-crm-sidebar .is-active {
-  background: rgba(30, 64, 175, 0.1);
+  background: rgba(5, 17, 26, 0.1);
   color: var(--zodo-text);
 }
 
@@ -2244,8 +2244,8 @@ body {
   gap: 14px;
   align-content: start;
   background:
-    linear-gradient(rgba(24, 24, 27, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(24, 24, 27, 0.035) 1px, transparent 1px),
+    linear-gradient(rgba(11, 18, 32, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(11, 18, 32, 0.035) 1px, transparent 1px),
     var(--zodo-surface);
   background-size: 28px 28px;
   padding: 16px;
@@ -2258,7 +2258,7 @@ body {
 }
 
 .zodo-crm-metric {
-  border: 1px solid rgba(24, 24, 27, 0.1);
+  border: 1px solid rgba(11, 18, 32, 0.1);
   border-radius: 5px;
   background: var(--zodo-surface);
   padding: 13px;
@@ -2293,7 +2293,7 @@ body {
 }
 
 .zodo-crm-stage {
-  border: 1px solid rgba(24, 24, 27, 0.1);
+  border: 1px solid rgba(11, 18, 32, 0.1);
   border-radius: 5px;
   background: var(--zodo-surface);
   padding: 11px;
@@ -2327,7 +2327,7 @@ body {
 
 .zodo-crm-table {
   overflow: hidden;
-  border: 1px solid rgba(24, 24, 27, 0.1);
+  border: 1px solid rgba(11, 18, 32, 0.1);
   border-radius: 5px;
   background: var(--zodo-surface);
 }
@@ -2343,7 +2343,7 @@ body {
 }
 
 .zodo-crm-table-head {
-  border-bottom: 1px solid rgba(24, 24, 27, 0.1);
+  border-bottom: 1px solid rgba(11, 18, 32, 0.1);
   background: var(--zodo-bg);
   color: var(--zodo-muted);
   font-size: 11px;
@@ -2352,7 +2352,7 @@ body {
 }
 
 .zodo-crm-row + .zodo-crm-row {
-  border-top: 1px solid rgba(24, 24, 27, 0.08);
+  border-top: 1px solid rgba(11, 18, 32, 0.08);
 }
 
 .zodo-crm-row span,
@@ -2447,11 +2447,11 @@ body {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 14px;
-  border: 1px solid rgba(24, 24, 27, 0.08);
+  border: 1px solid rgba(11, 18, 32, 0.08);
   border-radius: 5px;
   background:
-    linear-gradient(rgba(24, 24, 27, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(24, 24, 27, 0.04) 1px, transparent 1px),
+    linear-gradient(rgba(11, 18, 32, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(11, 18, 32, 0.04) 1px, transparent 1px),
     var(--zodo-surface);
   background-size: 38px 38px;
   padding: 22px;
@@ -2723,7 +2723,7 @@ body {
 
 @keyframes live-dot {
   to {
-    box-shadow: 0 0 0 9px rgba(30, 64, 175, 0);
+    box-shadow: 0 0 0 9px rgba(5, 17, 26, 0);
   }
 }
 

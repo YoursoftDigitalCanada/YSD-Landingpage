@@ -4,15 +4,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        accent: "#1E40AF",
-        brandGreen: "#10B981",
+        accent: "#0F9F76",
+        brandGreen: "#0F9F76",
         brandCyan: "#06B6D4",
-        brandYellow: "#F97316",
-        brandOrange: "#F97316",
-        ink: "#111827",
-        muted: "#64748B",
-        line: "#E2E8F0",
-        soft: "#F8FAFC"
+        brandYellow: "#F59E0B",
+        brandOrange: "#F59E0B",
+        ink: "#0B1220",
+        muted: "#52525B",
+        line: "#E5E7EB",
+        soft: "#FCFCFA"
       },
       borderRadius: {
         brand: "14px"
@@ -22,7 +22,7 @@ export default {
       },
       boxShadow: {
         quiet: "0 18px 60px rgba(15,23,42,0.07)",
-        color: "0 18px 44px rgba(30,64,175,0.18)"
+        color: "0 18px 44px rgba(6,182,212,0.18)"
       }
     }
   },
