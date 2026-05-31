@@ -1443,7 +1443,7 @@ function Pricing() {
               <p className="mt-4 min-h-16 text-muted">{plan.details}</p>
               <div className="my-7 h-px bg-line" />
               <div className="grid gap-3">
-                {plan.items.map((item) => (
+                {plan.items.map((item, index) => (
                   <span key={item} className="flex items-center gap-2 text-sm font-semibold text-ink">
                     <Check size={16} style={{ color: themeColors[index % themeColors.length] }} />
                     {item}
