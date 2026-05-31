@@ -283,7 +283,7 @@ function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-white/95 backdrop-blur-xl">
       <nav className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-5 lg:px-8" aria-label="Main navigation">
-        <Link to="/" className="flex items-center rounded-brand bg-white px-2 py-1 shadow-[0_10px_30px_rgba(15,23,42,0.12)]" ariaLabel="Yoursoft Digital home">
+        <Link to="/" className="flex items-center" ariaLabel="Yoursoft Digital home">
           <LogoLockup className="h-12 w-56 sm:w-64" />
         </Link>
         <div className="hidden items-center gap-7 lg:flex">
