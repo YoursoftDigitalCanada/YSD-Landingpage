@@ -118,7 +118,7 @@ const packages = [
   }
 ];
 
-const themeColors = ["#1E40AF", "#06B6D4", "#F97316", "#10B981"];
+const themeColors = ["#0F9F76", "#06B6D4", "#05111A", "#F59E0B"];
 
 function cx(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -281,7 +281,16 @@ function Navbar() {
     Products: productLinks
   };
   return (
-    <header className="sticky top-0 z-50 border-b border-[#1E40AF] bg-[#1E40AF]/95 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#05111A]/95 backdrop-blur-xl">
+      <div className="border-b border-white/10 bg-white/[0.03]">
+        <div className="mx-auto flex h-10 max-w-7xl items-center justify-center gap-3 px-5 text-center text-xs font-semibold text-white/82 lg:px-8">
+          <span>All with One Business Operating System</span>
+          <Link to="/contact" className="inline-flex items-center gap-1 text-[#06B6D4] transition hover:text-white">
+            Book a demo
+            <ArrowRight size={13} />
+          </Link>
+        </div>
+      </div>
       <nav className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-5 lg:px-8" aria-label="Main navigation">
         <Link to="/" className="flex items-center rounded-brand bg-white px-2 py-1 shadow-[0_10px_30px_rgba(15,23,42,0.12)]" ariaLabel="Yoursoft Digital home">
           <LogoLockup className="h-12 w-56 sm:w-64" />
@@ -319,11 +328,8 @@ function Navbar() {
           })}
         </div>
         <div className="hidden items-center gap-3 lg:flex">
-          <a className="inline-flex items-center gap-2 text-sm font-semibold text-white transition hover:text-brandCyan" href={`tel:${company.phone.replace(/[^+\d]/g, "")}`}>
-            <Phone size={16} />
-            Call Now
-          </a>
-          <ButtonLink to="/contact" className="ring-1 ring-white/20">Request Quote</ButtonLink>
+          <Link to="/products/zodo-crm" className="text-sm font-semibold text-white/82 transition hover:text-brandCyan">Sign In</Link>
+          <ButtonLink to="/contact" className="ring-1 ring-white/20">Get A Demo</ButtonLink>
         </div>
         <button className="grid h-11 w-11 place-items-center rounded-brand border border-white/25 text-white lg:hidden" onClick={() => setOpen(true)} aria-label="Open menu">
           <Menu size={22} />
@@ -485,34 +491,263 @@ function HeroTrustLine() {
 function Home() {
   return (
     <>
-      <section className="noratrix-hero">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 lg:grid-cols-2 lg:px-8">
-          <div className="noratrix-hero-content">
-            <div className="noratrix-promo-section">
-              <div className="noratrix-integration-link">
-                <span className="noratrix-integration-icon">
-                  <img src="/assets/noratrix/img-dollar.svg" width="24" height="24" alt="" />
-                </span>
-                <span className="noratrix-integration-text">Discover a new Solutions to Grow your Business!</span>
-              </div>
-            </div>
-            <h1>Creative IT Solutions To Grow Your Business</h1>
-            <p>
-              Yoursoft Digital builds websites, apps, marketing systems, and SaaS products that help modern businesses capture leads and operate smarter.
-            </p>
-            <div className="noratrix-btn-group">
-              <Link to="/services" className="noratrix-dream-btn">our Services</Link>
-              <Link to="/contact" className="noratrix-dream-btn">contact us</Link>
-            </div>
+      <ZodoHero />
+      <ZodoProblem />
+      <ZodoSolution />
+      <ZodoFeatures />
+      <ZodoAutomation />
+      <ZodoIndustries />
+      <ZodoDemoCTA />
+    </>
+  );
+}
+
+function ZodoHero() {
+  return (
+    <section className="zodo-landing-hero">
+      <div className="zodo-hero-inner">
+        <div className="zodo-hero-copy">
+          <p className="zodo-eyebrow"><Sparkles size={15} /> Yoursoft Digital Operating System</p>
+          <h1>Run leads, sales, tasks, and follow-ups in one business workspace.</h1>
+          <p>
+            Yoursoft Digital brings CRM, automation, customer conversations, and service workflows into one clean system built for growing teams.
+          </p>
+          <div className="zodo-hero-actions">
+            <ButtonLink to="/contact">Book a demo</ButtonLink>
+            <Link to="/products/zodo-crm" className="zodo-hero-secondary">View CRM <ArrowRight size={17} /></Link>
           </div>
-          <div className="noratrix-banner-box">
-            <img src="/assets/noratrix/banner2.png" alt="Digital solution preview" />
+          <div className="zodo-proof-row">
+            {["Leads", "Pipeline", "Tasks", "Automation"].map((item, index) => (
+              <span key={item}><i style={{ backgroundColor: themeColors[index] }} /> {item}</span>
+            ))}
           </div>
         </div>
-      </section>
-      <NoratrixHomeSections />
-      <CTA title="Ready to turn the next idea into a working system?" text="Tell us what you are building. We will map the fastest path from scope to launch." cta="Start a Project" />
-    </>
+        <ZodoProductPreview />
+      </div>
+    </section>
+  );
+}
+
+function ZodoProductPreview() {
+  return (
+    <div className="zodo-product-preview" aria-label="Zodo CRM product dashboard previews">
+      <div className="zodo-desktop-preview">
+        <div className="zodo-desktop-topbar">
+          <div>
+            <span />
+            <span />
+            <span />
+          </div>
+          <strong>sales.zodo.ca/dashboard</strong>
+          <Search size={16} />
+        </div>
+        <div className="zodo-desktop-shell">
+          <aside>
+            <b>Zodo CRM</b>
+            {["Dashboard", "Leads", "Pipeline", "Invoices", "Tasks"].map((item, index) => (
+              <span key={item} className={index === 0 ? "is-active" : ""}>{item}</span>
+            ))}
+          </aside>
+          <main>
+            <div className="zodo-dash-head">
+              <div>
+                <p>Good morning, Alex</p>
+                <h2>Sales command center</h2>
+              </div>
+              <button>New lead</button>
+            </div>
+            <div className="zodo-metric-grid">
+              {[
+                ["New Leads", "128", "+18.2%", "#0F9F76"],
+                ["Open Deals", "32", "+12.5%", "#06B6D4"],
+                ["Revenue", "$84,250", "+24.6%", "#F59E0B"],
+                ["Tasks Due", "24", "-8.3%", "#05111A"]
+              ].map(([label, value, delta, color]) => (
+                <div key={label} className="zodo-metric-card" style={{ "--metric-color": color }}>
+                  <span>{label}</span>
+                  <strong>{value}</strong>
+                  <em>{delta}</em>
+                  <i />
+                </div>
+              ))}
+            </div>
+            <div className="zodo-pipeline">
+              <div className="zodo-panel-title">
+                <strong>Sales Pipeline</strong>
+                <span>This week</span>
+              </div>
+              <div className="zodo-pipeline-row">
+                {["New", "Contacted", "Proposal", "Negotiation", "Won"].map((stage, index) => (
+                  <div key={stage}>
+                    <span>{stage}</span>
+                    <strong>{[36, 28, 22, 15, 18][index]}</strong>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="zodo-activity">
+              <div className="zodo-panel-title">
+                <strong>Upcoming Activities</strong>
+                <span>View calendar</span>
+              </div>
+              {["Follow up with James Anderson", "Proposal presentation", "Call Noah Davis"].map((item, index) => (
+                <p key={item}><Check size={15} /> {item}<span>{["09:30", "11:00", "13:30"][index]}</span></p>
+              ))}
+            </div>
+          </main>
+        </div>
+      </div>
+      <div className="zodo-mobile-preview">
+        <div className="zodo-phone-frame">
+          <div className="zodo-safari-bar">
+            <span>9:41</span>
+            <strong>sales.zodo.ca</strong>
+            <span>100%</span>
+          </div>
+          <div className="zodo-mobile-app">
+            <div className="zodo-mobile-head">
+              <b>Zodo CRM</b>
+              <i />
+            </div>
+            <h3>Today</h3>
+            <div className="zodo-mobile-cards">
+              <div><span>Leads</span><strong>128</strong></div>
+              <div><span>Deals</span><strong>32</strong></div>
+              <div><span>Tasks</span><strong>24</strong></div>
+            </div>
+            <div className="zodo-mobile-list">
+              {["Call James", "Send proposal", "Review report", "Prepare quote"].map((item) => <p key={item}><Check size={12} /> {item}</p>)}
+            </div>
+            <div className="zodo-mobile-chart" />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function ZodoSectionIntro({ eyebrow, title, text }) {
+  return (
+    <div className="zodo-section-intro">
+      <p>{eyebrow}</p>
+      <h2>{title}</h2>
+      <span>{text}</span>
+    </div>
+  );
+}
+
+function ZodoProblem() {
+  const items = [
+    ["Scattered tools", "Leads, tasks, invoices, and customer notes live in too many disconnected places."],
+    ["Missed follow-ups", "Sales opportunities go quiet when reminders and ownership are unclear."],
+    ["Disconnected teams", "Managers cannot see what is moving, blocked, or ready for action."]
+  ];
+  return (
+    <section className="zodo-section zodo-problem-section">
+      <div className="zodo-container">
+        <ZodoSectionIntro eyebrow="Problem" title="Growth breaks when work is scattered." text="Most teams do not need more apps. They need one reliable place to run the customer workflow." />
+        <div className="zodo-three-column">
+          {items.map(([title, text], index) => (
+            <div key={title} className="zodo-operating-card" style={{ "--card-color": themeColors[index] }}>
+              <strong>{title}</strong>
+              <p>{text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ZodoSolution() {
+  return (
+    <section className="zodo-section zodo-solution-section">
+      <div className="zodo-container zodo-solution-grid">
+        <div>
+          <ZodoSectionIntro eyebrow="Solution" title="One unified CRM workspace." text="Zodo CRM gives every lead, activity, invoice, and follow-up a clear place in the operating rhythm." />
+          <ButtonLink to="/products/zodo-crm">Explore Zodo CRM</ButtonLink>
+        </div>
+        <div className="zodo-workspace-strip">
+          {["Capture", "Qualify", "Quote", "Follow up", "Report"].map((item, index) => (
+            <span key={item} style={{ "--step-color": themeColors[index % themeColors.length] }}>{item}</span>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ZodoFeatures() {
+  const features = [
+    ["Leads", "Capture and assign new opportunities.", Target],
+    ["Pipeline", "Track every stage from first call to won.", BarChart3],
+    ["Invoices", "Keep deal value and billing visible.", FileText],
+    ["Tasks", "Know what needs action today.", Check],
+    ["Calendar", "Plan meetings and follow-ups.", BriefcaseBusiness],
+    ["Automation", "Trigger reminders and handoffs.", Cpu],
+    ["Reporting", "See sales activity and revenue movement.", LayoutGrid]
+  ];
+  return (
+    <section className="zodo-section">
+      <div className="zodo-container">
+        <ZodoSectionIntro eyebrow="Features" title="Everything the team checks daily." text="A practical CRM surface for the work that keeps revenue moving." />
+        <div className="zodo-feature-grid">
+          {features.map(([title, text, Icon], index) => (
+            <div key={title} className="zodo-feature-item" style={{ "--feature-color": themeColors[index % themeColors.length] }}>
+              <Icon size={22} />
+              <strong>{title}</strong>
+              <p>{text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ZodoAutomation() {
+  return (
+    <section className="zodo-section zodo-automation-section">
+      <div className="zodo-container zodo-automation-grid">
+        <div>
+          <ZodoSectionIntro eyebrow="Automation" title="Workflows that save admin time." text="Turn repeat follow-ups, lead routing, task creation, and status updates into simple automated flows." />
+        </div>
+        <div className="zodo-automation-flow">
+          {["New lead", "Assign owner", "Create task", "Send reminder", "Update report"].map((item, index) => (
+            <span key={item} style={{ "--flow-color": themeColors[index % themeColors.length] }}>{item}</span>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ZodoIndustries() {
+  const industries = ["Roofing", "Trades", "Home services", "Agencies", "Small businesses"];
+  return (
+    <section className="zodo-section">
+      <div className="zodo-container">
+        <ZodoSectionIntro eyebrow="Industries" title="Built for service teams that move fast." text="Zodo works well when quote speed, follow-up discipline, and team visibility matter." />
+        <div className="zodo-industry-row">
+          {industries.map((industry, index) => (
+            <span key={industry} style={{ "--industry-color": themeColors[index % themeColors.length] }}>{industry}</span>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ZodoDemoCTA() {
+  return (
+    <section className="zodo-demo-cta">
+      <div className="zodo-container">
+        <p>Demo CTA</p>
+        <h2>See how Zodo can run your next lead-to-customer workflow.</h2>
+        <span>Book a guided demo and we will map your leads, pipeline, tasks, and automation into one operating system.</span>
+        <ButtonLink to="/contact">Book a demo</ButtonLink>
+      </div>
+    </section>
   );
 }
 
