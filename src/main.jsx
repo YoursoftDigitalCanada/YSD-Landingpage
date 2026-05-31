@@ -118,7 +118,7 @@ const packages = [
   }
 ];
 
-const themeColors = ["#2563EB", "#0EA5E9", "#38BDF8", "#4F46E5"];
+const themeColors = ["#1E40AF", "#06B6D4", "#F97316", "#10B981"];
 
 function cx(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -281,9 +281,9 @@ function Navbar() {
     Products: productLinks
   };
   return (
-    <header className="sticky top-0 z-50 border-b border-line bg-white/92 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-[#1E40AF] bg-[#1E40AF]/95 backdrop-blur-xl">
       <nav className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-5 lg:px-8" aria-label="Main navigation">
-        <Link to="/" className="flex items-center" ariaLabel="Yoursoft Digital home">
+        <Link to="/" className="flex items-center rounded-brand bg-white px-2 py-1 shadow-[0_10px_30px_rgba(15,23,42,0.12)]" ariaLabel="Yoursoft Digital home">
           <LogoLockup className="h-12 w-56 sm:w-64" />
         </Link>
         <div className="hidden items-center gap-7 lg:flex">
@@ -291,7 +291,7 @@ function Navbar() {
             const items = dropdowns[label];
             if (!items) {
               return (
-                  <Link key={to} to={to} className="text-sm font-medium text-muted transition hover:text-brandCyan">
+                  <Link key={to} to={to} className="text-sm font-medium text-white/80 transition hover:text-brandCyan">
                   {label}
                 </Link>
               );
@@ -299,7 +299,7 @@ function Navbar() {
 
             return (
               <div key={to} className="group relative flex h-[72px] items-center">
-                <Link to={to} className="inline-flex items-center gap-1 text-sm font-medium text-muted transition hover:text-brandCyan group-hover:text-brandCyan">
+                <Link to={to} className="inline-flex items-center gap-1 text-sm font-medium text-white/80 transition hover:text-brandCyan group-hover:text-brandCyan">
                   {label}
                   <ChevronRight size={14} className="rotate-90 transition group-hover:translate-y-0.5" />
                 </Link>
@@ -319,13 +319,13 @@ function Navbar() {
           })}
         </div>
         <div className="hidden items-center gap-3 lg:flex">
-          <a className="inline-flex items-center gap-2 text-sm font-semibold text-ink" href={`tel:${company.phone.replace(/[^+\d]/g, "")}`}>
+          <a className="inline-flex items-center gap-2 text-sm font-semibold text-white transition hover:text-brandCyan" href={`tel:${company.phone.replace(/[^+\d]/g, "")}`}>
             <Phone size={16} />
             Call Now
           </a>
-          <ButtonLink to="/contact">Request Quote</ButtonLink>
+          <ButtonLink to="/contact" className="ring-1 ring-white/20">Request Quote</ButtonLink>
         </div>
-        <button className="grid h-11 w-11 place-items-center rounded-brand border border-line lg:hidden" onClick={() => setOpen(true)} aria-label="Open menu">
+        <button className="grid h-11 w-11 place-items-center rounded-brand border border-white/25 text-white lg:hidden" onClick={() => setOpen(true)} aria-label="Open menu">
           <Menu size={22} />
         </button>
       </nav>
