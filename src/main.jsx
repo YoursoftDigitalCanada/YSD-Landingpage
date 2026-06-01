@@ -1178,7 +1178,7 @@ function AboutHero() {
             <span style={{ backgroundColor: themeColors[3] }} />
           </div>
           <p className="about-hero-eyebrow">About Yoursoft Digital</p>
-          <h1>A Canada-based IT company built for practical growth.</h1>
+          <h1>A Canadian based IT company built for practical growth.</h1>
           <p>Yoursoft Digital helps businesses move from scattered ideas and manual workflows to clear digital systems, customer-ready design, and software that can scale.</p>
           <p>Our team blends web, app, marketing, design, and SaaS product thinking so every launch supports the next business move.</p>
           <div className="about-hero-actions">
