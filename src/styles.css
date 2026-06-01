@@ -102,13 +102,16 @@ body {
 
 .noratrix-integration-link {
   position: relative;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
   padding: 8px 10px;
   color: var(--zodo-text-soft);
   font-size: 14px;
   letter-spacing: 0.58px;
   line-height: 24px;
-  vertical-align: top;
+  white-space: nowrap;
+  vertical-align: middle;
 }
 
 .noratrix-integration-link::before {
@@ -122,16 +125,18 @@ body {
 .noratrix-integration-link > * {
   position: relative;
   z-index: 2;
-  display: inline-block;
-  vertical-align: top;
+  display: inline-flex;
+  align-items: center;
 }
 
 .noratrix-integration-icon {
-  margin: 0 5px 0 0;
+  flex: 0 0 auto;
+  line-height: 0;
 }
 
 .noratrix-integration-text {
-  margin: 0 7px 0 0;
+  min-width: 0;
+  white-space: nowrap;
 }
 
 .noratrix-hero-content h1 {
@@ -2900,6 +2905,21 @@ body {
 
   .noratrix-hero-content {
     margin-top: 0;
+  }
+
+  .noratrix-integration-link {
+    gap: 5px;
+    max-width: calc(100vw - 40px);
+    padding: 8px 8px;
+    font-size: clamp(10px, 3vw, 11.5px);
+    letter-spacing: 0;
+    line-height: 20px;
+  }
+
+  .noratrix-integration-icon img {
+    display: block;
+    width: 20px;
+    height: 20px;
   }
 
   .noratrix-hero-content h1 {
