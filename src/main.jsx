@@ -180,6 +180,8 @@ function LogoMark({ className = "h-10 w-10" }) {
     <img
       src="/assets/yoursoft-digital-logo-mark.png"
       alt=""
+      width="430"
+      height="430"
       className={cx("rounded-brand object-contain", className)}
       aria-hidden="true"
     />
@@ -189,8 +191,11 @@ function LogoMark({ className = "h-10 w-10" }) {
 function LogoLockup({ className = "h-12 w-48" }) {
   return (
     <img
-      src="/assets/yoursoft-digital-logo-new.png"
+      src="/assets/yoursoft-digital-logo-new.webp"
       alt="Yoursoft Digital"
+      width="1000"
+      height="200"
+      decoding="async"
       className={cx("object-contain object-left", className)}
     />
   );
@@ -506,7 +511,7 @@ function Home() {
             </div>
           </div>
           <div className="noratrix-banner-box">
-            <img src="/assets/noratrix/banner2.png" alt="Digital solution preview" />
+            <img src="/assets/noratrix/banner2.webp" width="1200" height="899" fetchPriority="high" alt="Digital solution preview" />
           </div>
         </div>
       </section>
@@ -581,7 +586,7 @@ function NoratrixStats() {
 function NoratrixAboutBlocks() {
   const blocks = [
     {
-      image: "/assets/noratrix/about.png",
+      image: "/assets/noratrix/about.webp",
       title: "We complete every project with care around real business goals.",
       text: [
         "Yoursoft Digital builds websites, apps, campaigns, creative systems, and SaaS workflows that help teams capture demand and manage it cleanly.",
@@ -591,7 +596,7 @@ function NoratrixAboutBlocks() {
       to: "/services"
     },
     {
-      image: "/assets/noratrix/about2.png",
+      image: "/assets/noratrix/about2.webp",
       title: "Services build the foundation. Products add the innovation layer.",
       text: [
         "Zodo CRM, ATS System, and AI Chatbot give businesses practical tools for sales, hiring, support, and automation.",
@@ -609,7 +614,7 @@ function NoratrixAboutBlocks() {
         {blocks.map((block, index) => (
           <div key={block.title} className={cx("noratrix-about-row", block.reverse && "noratrix-about-row-reverse")}>
             <div className="noratrix-about-image reveal">
-              <img src={block.image} alt="" />
+              <img src={block.image} width={index === 0 ? "812" : "600"} height={index === 0 ? "669" : "593"} loading="lazy" decoding="async" alt="" />
               {index === 0 && (
                 <div className="noratrix-growing-company">
                   <p>* Growing digital systems for Canadian businesses</p>
@@ -644,7 +649,7 @@ function NoratrixDemoFeatures() {
         <NoratrixSectionHeading eyebrow="Demo" title="A connected digital system, not isolated deliverables." text="See how public-facing pages, campaigns, and SaaS workflows can move together from lead capture to follow-up." />
         <div className="grid items-center gap-10 lg:grid-cols-2">
           <div className="noratrix-video-card reveal">
-            <img src="/assets/noratrix/bg-4.jpg" alt="Digital strategy preview" />
+            <img src="/assets/noratrix/bg-4.webp" width="626" height="469" loading="lazy" decoding="async" alt="Digital strategy preview" />
             <Link to="/contact" className="noratrix-play-button" aria-label="Book a strategy call">
               <ArrowRight size={24} />
             </Link>
@@ -652,7 +657,7 @@ function NoratrixDemoFeatures() {
           <div className="grid gap-5">
             {featureRows.map(([title, text, image]) => (
               <div key={title} className="noratrix-feature-row reveal">
-                <img src={image} alt="" />
+                <img src={image} width="64" height="64" loading="lazy" decoding="async" alt="" />
                 <div>
                   <h3>{title}</h3>
                   <p>{text}</p>
@@ -683,7 +688,7 @@ function NoratrixCoreServices() {
         <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-3">
           {cards.map(([title, text, image], index) => (
             <Link key={title} to={index < 4 ? `/services/${services[index].slug}` : "/contact"} className="noratrix-service-card reveal" style={{ "--box-color": themeColors[index % themeColors.length] }}>
-              <img src={image} alt="" />
+              <img src={image} width="96" height="96" loading="lazy" decoding="async" alt="" />
               <h3>{title}</h3>
               <p>{text}</p>
             </Link>
@@ -718,8 +723,8 @@ function NoratrixProductShowcase() {
             ))}
           </div>
           <div className="noratrix-phone-stage reveal">
-            <img className="noratrix-rings" src="/assets/noratrix/rings-bg.png" alt="" />
-            <img className="noratrix-phone" src="/assets/noratrix/zodo-crm-mobile-preview.png" alt="Zodo CRM mobile dashboard preview" />
+            <img className="noratrix-rings" src="/assets/noratrix/rings-bg.webp" width="518" height="518" loading="lazy" decoding="async" alt="" />
+            <img className="noratrix-phone" src="/assets/noratrix/zodo-crm-mobile-preview.webp" width="343" height="727" loading="lazy" decoding="async" alt="Zodo CRM mobile dashboard preview" />
           </div>
         </div>
       </div>
@@ -804,9 +809,9 @@ function NoratrixPricing() {
 
 function NoratrixInsights() {
   const posts = [
-    ["How to turn a website into a lead system.", "Build service pages, forms, CRM handoff, and analytics around the same conversion path.", "/assets/noratrix/1.jpg"],
-    ["Why SaaS thinking improves service projects.", "Product-grade UX and architecture make websites and apps easier to extend after launch.", "/assets/noratrix/2.jpg"],
-    ["Where AI chatbots fit in SMB growth.", "Use chatbots for qualification, support, routing, and faster response without adding friction.", "/assets/noratrix/3.jpg"]
+    ["How to turn a website into a lead system.", "Build service pages, forms, CRM handoff, and analytics around the same conversion path.", "/assets/noratrix/1.webp"],
+    ["Why SaaS thinking improves service projects.", "Product-grade UX and architecture make websites and apps easier to extend after launch.", "/assets/noratrix/2.webp"],
+    ["Where AI chatbots fit in SMB growth.", "Use chatbots for qualification, support, routing, and faster response without adding friction.", "/assets/noratrix/3.webp"]
   ];
 
   return (
@@ -816,7 +821,7 @@ function NoratrixInsights() {
         <div className="grid gap-7 md:grid-cols-3">
           {posts.map(([title, text, image]) => (
             <article key={title} className="noratrix-blog-card reveal">
-              <img src={image} alt="" />
+              <img src={image} width="576" height="324" loading="lazy" decoding="async" alt="" />
               <div>
                 <p>Yoursoft Digital</p>
                 <h3>{title}</h3>
@@ -1161,7 +1166,7 @@ function AboutHero() {
         <div className="about-hero-meter reveal">
           <div className="about-hero-orbit about-hero-orbit-one" />
           <div className="about-hero-orbit about-hero-orbit-two" />
-          <img src="/assets/noratrix/about.png" alt="Yoursoft Digital team building connected business systems" />
+          <img src="/assets/noratrix/about.webp" width="812" height="669" loading="lazy" decoding="async" alt="Yoursoft Digital team building connected business systems" />
           <div className="about-hero-growth">
             <span>Canada-based</span>
             <strong>Services + SaaS</strong>
