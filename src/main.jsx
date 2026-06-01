@@ -31,7 +31,7 @@ import "./styles.css";
 
 const company = {
   phone: "+1 (604) 555-0198",
-  email: "hello@yoursoftdigital.ca",
+  email: "info@yoursoftdigital.ca",
   address: "Surrey, BC, Canada"
 };
 
