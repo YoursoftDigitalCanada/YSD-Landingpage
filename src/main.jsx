@@ -1693,7 +1693,7 @@ function App() {
       return;
     }
     const titles = {
-      "/": "Yoursoft Digital | Canada IT Services & SaaS Products",
+      "/": "Yoursoft Digital | Canadian based IT Services & SaaS Products",
       "/about": "About Yoursoft Digital | Surrey, BC IT Company",
       "/services": "IT Services | Yoursoft Digital",
       "/products": "SaaS Products | Yoursoft Digital",
