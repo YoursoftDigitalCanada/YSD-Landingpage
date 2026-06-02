@@ -1466,24 +1466,65 @@ function Pricing() {
 }
 
 function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    interest: "",
+    details: ""
+  });
+  const [formStatus, setFormStatus] = useState({ state: "idle", message: "" });
+
+  const updateField = (field) => (event) => {
+    setFormData((current) => ({ ...current, [field]: event.target.value }));
+  };
+
+  const submitContact = async (event) => {
+    event.preventDefault();
+    setFormStatus({ state: "loading", message: "Sending your message..." });
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData)
+      });
+      const result = await response.json().catch(() => ({}));
+
+      if (!response.ok) {
+        throw new Error(result.message || "Message could not be sent. Please try again.");
+      }
+
+      setFormData({ name: "", email: "", phone: "", interest: "", details: "" });
+      setFormStatus({ state: "success", message: "Message sent. Our team will get back to you shortly." });
+    } catch (error) {
+      setFormStatus({ state: "error", message: error.message || "Message could not be sent. Please try again." });
+    }
+  };
+
   return (
     <>
       <PageHero eyebrow="Contact" title="Tell us what you want to build." text="Send a project note, request a quote, or book a product demo with the Yoursoft Digital team in Surrey, BC." />
       <section className="section">
         <div className="mx-auto grid max-w-7xl gap-8 px-5 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
-          <form className="rounded-brand border border-line bg-white p-6 shadow-quiet reveal">
+          <form className="rounded-brand border border-line bg-white p-6 shadow-quiet reveal" onSubmit={submitContact}>
             <div className="grid gap-5 md:grid-cols-2">
-              <Field label="Name" placeholder="Your name" />
-              <Field label="Email" placeholder="you@company.com" type="email" />
-              <Field label="Phone" placeholder="+1" />
-              <Field label="Interest" placeholder="Website, app, product demo..." />
+              <Field label="Name" placeholder="Your name" value={formData.name} onChange={updateField("name")} required />
+              <Field label="Email" placeholder="you@company.com" type="email" value={formData.email} onChange={updateField("email")} required />
+              <Field label="Phone" placeholder="+1" value={formData.phone} onChange={updateField("phone")} />
+              <Field label="Interest" placeholder="Website, app, product demo..." value={formData.interest} onChange={updateField("interest")} />
             </div>
             <label className="mt-5 block">
               <span className="text-sm font-bold text-ink">Project details</span>
-              <textarea className="mt-2 min-h-36 w-full rounded-brand border border-line bg-white px-4 py-3 outline-none transition focus:border-ink" placeholder="Tell us about your goals, timeline, and current website or system." />
+              <textarea className="mt-2 min-h-36 w-full rounded-brand border border-line bg-white px-4 py-3 outline-none transition focus:border-ink" placeholder="Tell us about your goals, timeline, and current website or system." value={formData.details} onChange={updateField("details")} required />
             </label>
-            <button className="zodo-primary-button mt-6 inline-flex min-h-11 items-center justify-center gap-2 px-5 py-3 text-sm font-semibold transition hover:-translate-y-0.5" type="button">
-              Send Message
+            {formStatus.message && (
+              <p className={cx("mt-4 rounded-brand border px-4 py-3 text-sm font-semibold", formStatus.state === "success" ? "border-brandGreen/25 bg-brandGreen/10 text-ink" : formStatus.state === "error" ? "border-brandOrange/30 bg-brandOrange/10 text-ink" : "border-line bg-soft text-muted")}>
+                {formStatus.message}
+              </p>
+            )}
+            <button className="zodo-primary-button mt-6 inline-flex min-h-11 items-center justify-center gap-2 px-5 py-3 text-sm font-semibold transition hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-70" type="submit" disabled={formStatus.state === "loading"}>
+              {formStatus.state === "loading" ? "Sending..." : "Send Message"}
               <ArrowRight size={17} />
             </button>
           </form>
@@ -1508,11 +1549,11 @@ function Contact() {
   );
 }
 
-function Field({ label, placeholder, type = "text" }) {
+function Field({ label, placeholder, type = "text", value, onChange, required = false }) {
   return (
     <label className="block">
       <span className="text-sm font-bold text-ink">{label}</span>
-      <input className="mt-2 h-12 w-full rounded-brand border border-line bg-white px-4 outline-none transition focus:border-ink" placeholder={placeholder} type={type} />
+      <input className="mt-2 h-12 w-full rounded-brand border border-line bg-white px-4 outline-none transition focus:border-ink" placeholder={placeholder} type={type} value={value} onChange={onChange} required={required} />
     </label>
   );
 }
