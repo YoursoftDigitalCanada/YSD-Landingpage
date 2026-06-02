@@ -30,7 +30,7 @@ import {
 import "./styles.css";
 
 const company = {
-  phone: "+1 (604) 555-0198",
+  phone: "+1 236-234-1294",
   email: "info@yoursoftdigital.ca",
   address: "Surrey, BC, Canada"
 };
