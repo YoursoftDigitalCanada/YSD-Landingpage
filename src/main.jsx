@@ -1465,34 +1465,6 @@ function Pricing() {
   );
 }
 
-function Careers() {
-  const roles = [
-    ["Frontend Developer", "React, responsive UI, performance-focused website builds."],
-    ["Full Stack Developer", "Business apps, APIs, dashboards, CRM, and automation workflows."],
-    ["Digital Marketing Specialist", "SEO, ads, content, analytics, and lead generation campaigns."],
-    ["UI/UX & Graphic Designer", "Brand systems, product screens, web design, and marketing creatives."]
-  ];
-
-  return (
-    <>
-      <PageHero eyebrow="Careers" title="Build practical digital systems with Yoursoft Digital." text="We are growing a Canada-based team of developers, designers, marketers, and product-minded problem solvers." />
-      <section className="section">
-        <SectionHeader eyebrow="Open paths" title="Roles we hire for" text="Send us your profile if you care about clean execution, useful products, and business outcomes." />
-        <div className="mx-auto grid max-w-7xl gap-5 px-5 md:grid-cols-2 lg:px-8">
-          {roles.map(([title, text], index) => (
-            <div key={title} className="rounded-brand border border-line bg-white p-6 shadow-quiet reveal" style={{ "--box-color": themeColors[index % themeColors.length] }}>
-              <span className="mb-5 block h-1 w-12 rounded-full" style={{ backgroundColor: themeColors[index % themeColors.length] }} />
-              <h2 className="text-xl font-bold text-ink">{title}</h2>
-              <p className="mt-3 text-muted">{text}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-      <CTA title="Interested in joining Yoursoft Digital?" text={`Send your resume or portfolio to ${company.email}. We review every serious application.`} cta="Contact Us" />
-    </>
-  );
-}
-
 function Contact() {
   const [formData, setFormData] = useState({
     name: "",
@@ -1647,7 +1619,7 @@ function Footer() {
         </div>
         <FooterLinks title="Services" links={services.map((service) => [`/services/${service.slug}`, service.title])} />
         <FooterLinks title="Products" links={products.map((product) => [`/products/${product.slug}`, product.title])} />
-        <FooterLinks title="Company" links={[["/about", "About"], ["/careers", "Careers"], ["/contact", "Contact"]]} />
+        <FooterLinks title="Company" links={[["/about", "About"], ["/contact", "Contact"]]} />
         <div>
           <p className="font-bold text-white">Newsletter</p>
           <p className="mt-3 text-sm text-zinc-300">Product updates, launch notes, and growth ideas.</p>
@@ -1749,7 +1721,6 @@ function App() {
       "/services": <ServicesPage />,
       "/products": <ProductsPage />,
       "/pricing": <Pricing />,
-      "/careers": <Careers />,
       "/contact": <Contact />
     };
     return routes[path] || <NotFound />;
@@ -1774,7 +1745,6 @@ function App() {
       "/services": "IT Services | Yoursoft Digital",
       "/products": "SaaS Products | Yoursoft Digital",
       "/pricing": "Pricing & Packages | Yoursoft Digital",
-      "/careers": "Careers | Yoursoft Digital",
       "/contact": "Contact Yoursoft Digital | Surrey, BC"
     };
     document.title = titles[path] || "Yoursoft Digital";
