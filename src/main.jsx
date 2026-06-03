@@ -191,10 +191,10 @@ function LogoMark({ className = "h-10 w-10" }) {
 function LogoLockup({ className = "h-12 w-48" }) {
   return (
     <img
-      src="/assets/yoursoft-digital-logo-new.webp"
+      src="/assets/yoursoft-digital-main-logo.webp"
       alt="Yoursoft Digital"
-      width="1000"
-      height="200"
+      width="1200"
+      height="364"
       decoding="async"
       className={cx("object-contain object-left", className)}
     />
