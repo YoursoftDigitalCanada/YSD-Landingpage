@@ -277,7 +277,7 @@ function Navbar() {
     ["/services/graphic-design", "Graphic Design"]
   ];
   const productLinks = [
-    ["/products/zodo-crm", "Zodo CRM"],
+    ["https://www.zodo.ca", "Zodo CRM"],
     ["/products/ai-chatbot", "AI Chatbot"],
     ["/products/ats-system", "ATS System"]
   ];
@@ -1621,12 +1621,7 @@ function Footer() {
         <FooterLinks title="Products" links={products.map((product) => [`/products/${product.slug}`, product.title])} />
         <FooterLinks title="Company" links={[["/about", "About"], ["/contact", "Contact"]]} />
         <div>
-          <p className="font-bold text-white">Newsletter</p>
-          <p className="mt-3 text-sm text-zinc-300">Product updates, launch notes, and growth ideas.</p>
-          <div className="mt-4 flex rounded-brand border border-white/10 bg-white/8 p-1">
-            <input className="min-w-0 flex-1 bg-transparent px-3 text-sm text-white outline-none placeholder:text-zinc-500" placeholder="Email address" />
-            <button className="rounded-brand bg-brandOrange px-3 py-2 text-sm font-bold text-white" type="button">Join</button>
-          </div>
+          <p className="font-bold text-white">Contact</p>
           <p className="mt-5 text-sm text-zinc-300">{company.email}</p>
           <p className="mt-1 text-sm text-zinc-300">{company.address}</p>
         </div>
