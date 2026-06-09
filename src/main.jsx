@@ -279,7 +279,7 @@ function Navbar() {
   const productLinks = [
     ["https://www.zodo.ca", "Zodo CRM"],
     ["/products/ai-chatbot", "AI Chatbot"],
-    ["/products/ats-system", "ATS System"]
+    ["https://talentconnectors.ca/", "ATS System"]
   ];
   const dropdowns = {
     Services: serviceLinks,
