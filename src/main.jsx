@@ -189,12 +189,13 @@ function LogoMark({ className = "h-10 w-10" }) {
 }
 
 function LogoLockup({ className = "h-12 w-48", variant = "light" }) {
+  const isDark = variant === "dark";
   return (
     <img
-      src={variant === "dark" ? "/assets/yoursoft-logo-dark.svg" : "/assets/yoursoft-logo-light.svg"}
+      src={isDark ? "/assets/yoursoft-logo-dark4.svg" : "/assets/yoursoft-logo-light.svg"}
       alt="Yoursoft Digital"
-      width="4413"
-      height="629"
+      width={isDark ? "3685" : "4413"}
+      height={isDark ? "523" : "629"}
       decoding="async"
       className={cx("object-contain object-left", className)}
     />
@@ -1612,7 +1613,7 @@ function Footer() {
     <footer className="border-t border-[#0b1220] bg-[#0b1220] text-white">
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 md:grid-cols-3 lg:grid-cols-5 lg:px-8">
         <div>
-          <LogoLockup variant="dark" className="h-14 w-72" />
+          <LogoLockup variant="dark" className="h-16 w-80 max-w-full" />
           <p className="mt-4 text-sm leading-6 text-zinc-300">Canada-based IT services and SaaS products for growth-minded businesses.</p>
         </div>
         <FooterLinks title="Services" links={services.map((service) => [`/services/${service.slug}`, service.title])} />
