@@ -178,23 +178,23 @@ function ButtonLink({ to, children, variant = "primary", className }) {
 function LogoMark({ className = "h-10 w-10" }) {
   return (
     <img
-      src="/assets/yoursoft-digital-logo-mark.png"
+      src="/assets/yoursoft-brand-icon.png"
       alt=""
-      width="430"
-      height="430"
-      className={cx("rounded-brand object-contain", className)}
+      width="512"
+      height="512"
+      className={cx("object-contain", className)}
       aria-hidden="true"
     />
   );
 }
 
-function LogoLockup({ className = "h-12 w-48" }) {
+function LogoLockup({ className = "h-12 w-48", variant = "light" }) {
   return (
     <img
-      src="/assets/yoursoft-digital-main-logo.webp"
+      src={variant === "dark" ? "/assets/yoursoft-logo-dark.svg" : "/assets/yoursoft-logo-light.svg"}
       alt="Yoursoft Digital"
-      width="1200"
-      height="364"
+      width="3000"
+      height="700"
       decoding="async"
       className={cx("object-contain object-left", className)}
     />
@@ -1612,9 +1612,7 @@ function Footer() {
     <footer className="border-t border-[#0b1220] bg-[#0b1220] text-white">
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 md:grid-cols-3 lg:grid-cols-5 lg:px-8">
         <div>
-          <div className="inline-flex rounded-brand bg-white px-3 py-2">
-            <LogoLockup className="h-14 w-72" />
-          </div>
+          <LogoLockup variant="dark" className="h-14 w-72" />
           <p className="mt-4 text-sm leading-6 text-zinc-300">Canada-based IT services and SaaS products for growth-minded businesses.</p>
         </div>
         <FooterLinks title="Services" links={services.map((service) => [`/services/${service.slug}`, service.title])} />
