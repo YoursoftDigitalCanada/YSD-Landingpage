@@ -290,7 +290,7 @@ function Navbar() {
     <header className="sticky top-0 z-50 border-b border-line bg-white/95 backdrop-blur-xl">
       <nav className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-5 lg:px-8" aria-label="Main navigation">
         <Link to="/" className="flex items-center" ariaLabel="Yoursoft Digital home">
-          <LogoLockup className="h-[68px] w-[224px] sm:w-[300px]" />
+          <LogoLockup className="h-[68px] w-[198px] sm:w-[260px]" />
         </Link>
         <div className="hidden items-center gap-7 lg:flex">
           {nav.map(([to, label]) => {
@@ -339,7 +339,7 @@ function Navbar() {
         <div className="fixed right-0 top-0 z-[9999] h-screen w-screen bg-slate-500/35 backdrop-blur-sm lg:hidden" onClick={() => setOpen(false)}>
           <div className="relative z-[10000] ml-auto h-screen w-[88vw] max-w-sm overflow-y-auto bg-white p-5 shadow-quiet" onClick={(event) => event.stopPropagation()}>
             <div className="mb-8 flex items-center justify-between">
-              <LogoLockup className="h-12 w-64" />
+              <LogoLockup className="h-12 w-56" />
               <button className="grid h-10 w-10 place-items-center rounded-brand border border-line" onClick={() => setOpen(false)} aria-label="Close menu">
                 <X size={20} />
               </button>
