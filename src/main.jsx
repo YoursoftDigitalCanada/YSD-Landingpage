@@ -192,10 +192,10 @@ function LogoLockup({ className = "h-12 w-48", variant = "light" }) {
   const isDark = variant === "dark";
   return (
     <img
-      src={isDark ? "/assets/yoursoft-logo-dark4.svg" : "/assets/yoursoft-logo-light.svg"}
+      src={isDark ? "/assets/yoursoft-logo-dark-v6.svg" : "/assets/yoursoft-logo-light-v6.svg"}
       alt="Yoursoft Digital"
-      width={isDark ? "3685" : "4413"}
-      height={isDark ? "523" : "629"}
+      width="520"
+      height="102"
       decoding="async"
       className={cx("object-contain object-left", className)}
     />
