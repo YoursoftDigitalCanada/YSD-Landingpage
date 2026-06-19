@@ -287,29 +287,27 @@ function Navbar() {
     Products: productLinks
   };
   return (
-    <header className="sticky top-0 z-50 border-b border-line bg-white/95 backdrop-blur-xl">
-      <nav className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-5 lg:px-8" aria-label="Main navigation">
-        <Link to="/" className="flex items-center" ariaLabel="Yoursoft Digital home">
-          <LogoLockup className="h-[68px] w-[198px] sm:w-[260px]" />
-        </Link>
-        <div className="hidden items-center gap-7 lg:flex">
+    <header className="sticky top-0 z-50 bg-white/95 shadow-[0_1px_0_rgba(0,0,0,0.06)] backdrop-blur-xl">
+      <nav className="border-b border-line bg-soft/95" aria-label="Primary navigation">
+        <div className="mx-auto flex h-12 max-w-7xl items-center justify-end px-5 lg:justify-center lg:px-8">
+          <div className="hidden items-center gap-8 lg:flex">
           {nav.map(([to, label]) => {
             const items = dropdowns[label];
             if (!items) {
               return (
-                  <Link key={to} to={to} className="text-sm font-medium text-ink/75 transition hover:text-brandCyan">
+                <Link key={to} to={to} className="text-sm font-semibold text-ink/75 transition hover:text-brandCyan">
                   {label}
                 </Link>
               );
             }
 
             return (
-              <div key={to} className="group relative flex h-[72px] items-center">
-                <Link to={to} className="inline-flex items-center gap-1 text-sm font-medium text-ink/75 transition hover:text-brandCyan group-hover:text-brandCyan">
+              <div key={to} className="group relative flex h-12 items-center">
+                <Link to={to} className="inline-flex items-center gap-1 text-sm font-semibold text-ink/75 transition hover:text-brandCyan group-hover:text-brandCyan">
                   {label}
                   <ChevronRight size={14} className="rotate-90 transition group-hover:translate-y-0.5" />
                 </Link>
-                <div className="pointer-events-none absolute left-1/2 top-[64px] w-64 -translate-x-1/2 translate-y-2 rounded-brand border border-line bg-white p-2 opacity-0 shadow-quiet transition duration-200 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:translate-y-0 group-focus-within:opacity-100">
+                <div className="pointer-events-none absolute left-1/2 top-[44px] w-64 -translate-x-1/2 translate-y-2 rounded-brand border border-line bg-white p-2 opacity-0 shadow-quiet transition duration-200 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:translate-y-0 group-focus-within:opacity-100">
                   {items.map(([itemTo, itemLabel], index) => (
                     <Link key={itemTo} to={itemTo} className="flex items-center justify-between rounded-brand px-4 py-3 text-sm font-semibold text-ink transition hover:bg-soft" style={{ "--item-color": themeColors[index % themeColors.length] }}>
                       <span className="inline-flex items-center gap-2">
@@ -323,17 +321,24 @@ function Navbar() {
               </div>
             );
           })}
+          </div>
+          <button className="inline-flex h-9 items-center gap-2 rounded-brand border border-line bg-white px-3 text-sm font-semibold text-ink lg:hidden" onClick={() => setOpen(true)} aria-label="Open menu">
+            <Menu size={18} />
+            Menu
+          </button>
         </div>
-        <div className="hidden items-center gap-3 lg:flex">
-          <a className="inline-flex items-center gap-2 text-sm font-semibold text-ink transition hover:text-brandCyan" href={`tel:${company.phone.replace(/[^+\d]/g, "")}`}>
+      </nav>
+      <nav className="mx-auto flex h-[72px] max-w-7xl items-center justify-between gap-3 px-5 lg:px-8" aria-label="Brand and contact navigation">
+        <Link to="/" className="flex min-w-0 items-center" ariaLabel="Yoursoft Digital home">
+          <LogoLockup className="h-[66px] w-[132px] sm:w-[200px] lg:w-[260px]" />
+        </Link>
+        <div className="flex shrink-0 items-center gap-2 sm:gap-3">
+          <a className="inline-flex min-h-10 items-center gap-2 px-1 text-xs font-semibold text-ink transition hover:text-brandCyan sm:text-sm" href={`tel:${company.phone.replace(/[^+\d]/g, "")}`} aria-label={`Call Yoursoft Digital at ${company.phone}`}>
             <Phone size={16} />
-            Call Now
+            <span className="hidden sm:inline">Call Now</span>
           </a>
-          <ButtonLink to="/contact">Request Quote</ButtonLink>
+          <ButtonLink to="/contact" className="min-h-10 px-3 py-2 text-xs sm:px-4 sm:text-sm">Request Quote</ButtonLink>
         </div>
-        <button className="grid h-11 w-11 place-items-center rounded-brand border border-line text-ink lg:hidden" onClick={() => setOpen(true)} aria-label="Open menu">
-          <Menu size={22} />
-        </button>
       </nav>
       {open && (
         <div className="fixed right-0 top-0 z-[9999] h-screen w-screen bg-slate-500/35 backdrop-blur-sm lg:hidden" onClick={() => setOpen(false)}>
